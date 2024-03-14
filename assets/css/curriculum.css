@@ -1,0 +1,196 @@
+.taken{ color: var(--taken); }
+.inLoad{ color: var(--inLoad); }
+.notTaken{ color: var(--notTaken); }
+.incomplete{ color: var(--incomplete); }
+.preReq{ color: var(--prereq); }
+.credited{ color: var(--credited); }
+
+.student-currs{
+  width: 100%;
+  h1{ margin: 0 0 16px; }
+  .curr{
+    padding: 20px 0;
+    .gen-info{
+      background: var(--gray);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      .infos{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        ul{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          gap: 5px;
+          padding: 8px 5px 5px;
+          border: 2px groove gray;
+        }
+        ul::before{
+          background: var(--gray);
+          position: absolute;
+          top: 0;
+          font-size: 11px;
+          padding: 0 3px;
+          transform: translateY(-55%);
+        }
+        .basic-info::before{ content: 'Basic Information'; }
+        .units::before{ content: 'Units'; }
+      }
+    }
+    .main-curr{
+      max-width: 800px;
+      margin-inline: auto;
+      width: calc(100vw - 200px);
+      .year-taken,
+      .tab-nav{ user-select: none; }
+      .tab-nav{
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: space-between;
+        gap: 10px;
+        margin: 15px 0 0;
+        ul{
+          display: flex;
+          li{
+            background: var(--gray);
+            border-radius: 7px 7px 0 0;
+            cursor: pointer;
+            p{ padding: 5px 8px; }
+          }
+          li:hover{ background: hsl(222, 8%, 77%); }
+          li.selected,
+          li.selected:hover{ background: hsl(222, 8%, 88%); }
+        }
+        .legend{
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 8px;
+          padding: 0 10px;
+          > p{ font-weight: bold; }
+          p{ font-size: 9px; }
+          > div{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 2px;
+            > div{
+              width: 12px;
+              height: 12px;
+              border: 1px solid black;
+            }
+          }
+          .taken{ background: var(--taken); }
+          .notTaken{ background: var(--notTaken); }
+          .preReq{ background: var(--prereq); }
+        }
+      }
+      .curriculum-lists{
+        background: linear-gradient(
+          to bottom,
+          hsl(222, 8%, 88%) 20%,
+          hsl(222, 8%, 93%)
+        );
+        article{
+          display: none;
+          padding: 20px;
+          flex-direction: column;
+          min-height: 400px;
+        }
+        article.show{ display: flex; }
+        .year-taken{
+          display: flex;
+          gap: 8px;
+          margin: 0 0 5px;
+          span{
+            color: #000;
+            cursor: pointer;
+          }
+          span.selected{ color: var(--l-blue); }
+        }
+        .table-cont{ overflow: auto; }
+        .curr-tables > div{
+          display: none;
+          flex-direction: column;
+          gap: 15px;
+        }
+        .curr-tables > div.show{ display: flex; }
+        
+        table{
+          width: 760px;
+          thead th:nth-child(1),
+          thead th:nth-child(2),
+          thead th:nth-child(3),
+          thead th:nth-child(5),
+          thead th:nth-child(6),
+          thead th:nth-child(7){ width: 5%; }
+          thead th:nth-child(10){ width: 10%; }
+          thead th:nth-child(8),
+          thead th:nth-child(9){ width: 15%; }
+          thead th:nth-child(4){ width: 30%; }
+          thead th{
+            background: hsl(0, 0%, 55%);
+            font-weight: normal;
+            text-align: center;
+            border: solid 1px hsl(0, 0%, 20%);
+          }
+          td{
+            background: #f0f0f0;
+            text-align: center;
+            text-transform: uppercase;
+            border: solid 1px hsl(0, 0%, 85%);
+          }
+          tbody tr:last-child{ border-top: solid 2px black; }
+        }
+      
+        #Electives select{ margin: 18px 0 0 20px; }
+        #Electives ul{
+          display: flex;
+          gap: 10px;
+          margin: 0 0 5px;
+        }
+        
+        .no-course,
+        #Specialization{
+          color: red;
+          text-align: center;
+        }
+        #Specialization p{ margin-top: 16px; }
+      }
+    }
+  }
+}
+
+/* --==Responsive==-- */
+@media(max-width: 1400px){
+  
+}
+@media(max-width: 1250px){
+
+}
+@media(max-width: 940px){
+  
+}
+@media(max-width: 740px){
+  .student-currs {
+    .curr{
+      padding: 15px 0;
+      .main-curr .curriculum-lists article{
+        padding: 13px;
+      }
+      .legend{ margin-inline: auto; }
+    }
+  }
+}
+@media(max-width: 560px){
+  .student-currs .curr .main-curr{
+    width: 100%;
+    .curriculum-lists table{
+      width: 630px;
+    }
+  }
+}

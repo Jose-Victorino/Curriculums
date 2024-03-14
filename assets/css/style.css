@@ -1,0 +1,227 @@
+:root{
+  --font: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  --font1: 'Poppins', 'Roboto', 'Open Sans', sans-serif;
+
+  /* Font Size Clamp */
+  --fs-30-36: clamp(30px, 0.375rem + 4.2857vw, 36px);
+  --fs-20-24: clamp(20px, -2.25rem + 10vw, 24px);
+  --fs-14-16: clamp(14px, -0.875rem + 5vw, 16px);
+
+  /* Solid Color */
+  --l-blue: hsl(222, 92%, 46%);
+  --blue: hsl(222, 88%, 33%);
+  --yellow: hsl(49, 90%, 60%);
+  --gray: hsl(222, 6%, 62%);
+  --taken: #0000ff;
+  --inLoad: #228b22;
+  --notTaken: #000000;
+  --incomplete: #b42222;
+  --credited: #b8860b;
+  --pale: #cccc99f3;
+  --prereq: #b31090;
+}
+/* Default Styles */
+*, *::before, *::after {
+  text-decoration: none;
+	box-sizing: border-box;
+  scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+}
+body{
+  font-family: var(--font);
+}
+h1, h2, h3, h4, h5, h6, p, span, a{ line-height: 100%; }
+h1{ font-size: var(--fs-20-24); }
+a{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+button{
+  font-size: 11px;
+  color: black;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+h4, p, span, li, th, td{ font-size: 11px; }
+ul{ list-style: none; }
+table{ border-collapse: collapse; }
+td, th{
+  font-size: 9.5px;
+  padding: 4px;
+  border: 1px solid black;
+}
+input, textarea{
+  color: black;
+  outline: none;
+  padding: 5px;
+  border: 1px solid hsl(222, 2%, 20%);
+}
+input:focus, textarea:focus{ border: 1px solid hsl(0, 0%, 65%); }
+option, select{
+  font-family: var(--font);
+  font-size: 11px;
+  font-style: normal;
+  padding: 3px;
+}
+.Cont{
+  width: 1350px;
+  margin-inline: auto;
+}
+header{
+  background: hsl(222, 12%, 30%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  padding-inline: 25px;
+  .Burger-Cont{
+    display: none;
+  }
+  img{
+    height: 40px;
+    user-select: none;
+  }
+}
+
+main{
+  display: flex;
+  .tab-windows{
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    border-left: solid 1px #cccccc;
+  }
+}
+
+nav{
+  padding: 10px 0 0;
+  font-size: 11px;
+  width: 160px;
+  ul{
+    position: sticky;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    width: 140px;
+    gap: 5px;
+  }
+  > ul{
+    margin: 0 0 0 20px;
+  }
+  ul ul{
+    padding-left: 15px;
+  }
+  .nav-item{
+    padding-block: 6px;
+    cursor: pointer;
+  }
+  .nav-item.selected{
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+  }
+  .nav-item:hover{
+    background: #c5c5c5;
+  }
+  .nav-item.selected:hover{
+    background: var(--blue);
+  }
+}
+
+.tab-windows [data-mainTabWindow]{
+  display: none;
+}
+.tab-windows [data-mainTabWindow].show{
+  display: flex;
+  flex-direction: column;
+}
+
+/* --==Responsive==-- */
+@media(max-width: 1400px){
+  .Cont{ width: 1200px; }
+
+}
+@media(max-width: 1250px){
+  .Cont{ width: 900px; }
+
+}
+@media(max-width: 940px){
+  .Cont{ width: 700px; }
+
+}
+@media(max-width: 740px){
+  .Cont{ width: 520px; }
+
+  input, textarea{
+    font-size: 11px;
+  }
+  
+  nav > ul{
+    margin: 0 0 0 10px;
+  }
+}
+@media(max-width: 560px){
+  .Cont{ width: calc(100% - 30px); }
+  
+  header .Burger-Cont{
+    display: flex;
+  }
+  header .Nav-Burger{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 18px;
+    aspect-ratio: 7 / 8;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  header .Nav-Burger .Bar{
+    background: #e3e3e3;
+    height: 12%;
+    border-radius: 100px;
+    transition: 0.3s;
+  }
+  header .Nav-Burger.on{ transform: rotateZ(180deg); }
+  header .Nav-Burger.on .Bar-Top{ transform: rotateZ(45deg) translate(26%, 200%); }
+  header .Nav-Burger.on .Bar-Bot{ transform: rotateZ(-45deg) translate(26%, -200%); }
+  header .Nav-Burger.on .Bar-Mid{ opacity: 0; }
+  header img{
+    height: 30px;
+  }
+
+  nav{
+    background: hsla(0, 0%, 0%, 0.4);
+    z-index: 1;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: calc(100% - 70px);
+    backdrop-filter: blur(5px);
+    color: #f2f2f2;
+    transform: translateX(-100%);
+    /* transition: transform 0.5s; */
+    .nav-item.selected{
+      background: none;
+      color: var(--blue);
+      font-weight: normal;
+    }
+    .nav-item:hover{
+      background: none;
+      color: #c5c5c5;
+    }
+    .nav-item.selected:hover {
+      background: none;
+      color: var(--blue);
+    }
+  }
+  nav.show{
+    transform: translateX(0);
+  }
+}
