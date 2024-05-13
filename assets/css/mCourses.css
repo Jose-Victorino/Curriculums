@@ -46,7 +46,7 @@
 .mutual-courses table tbody tr:nth-child(even) td{
   background: hsl(0, 0%, 0%, 0.15);
 }
-.mutual-courses table tbody tr.core + tr.electives{
+.mutual-courses table tbody tr.core + tr.elective{
   border-top: solid 2px black;
 }
 .mutual-courses table tbody td{
