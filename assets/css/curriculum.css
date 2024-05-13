@@ -1,0 +1,246 @@
+.taken{ color: var(--taken); }
+.inLoad{ color: var(--inLoad); }
+.notTaken{ color: var(--notTaken); }
+.incomplete{ color: var(--incomplete); }
+.preReq{ color: var(--prereq); }
+.credited{ color: var(--credited); }
+
+.student-currs{
+  width: 100%;
+}
+.student-currs .curr{
+  padding: 20px 0;
+}
+.student-currs .curr .gen-info{
+  background: var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.student-currs .curr .gen-info .student-name{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 16px;
+}
+.student-currs .curr .gen-info .student-name img{
+  width: clamp(14px, -0.875rem + 5vw, 16px);
+  cursor: pointer;
+}
+.student-currs .curr .gen-info .infos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.student-currs .curr .gen-info .infos ul{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 5px;
+  padding: 8px 5px 5px;
+  border: 2px groove gray;
+}
+.student-currs .curr .gen-info .infos ul::before{
+  background: var(--gray);
+  position: absolute;
+  top: 0;
+  font-size: 11px;
+  padding: 0 3px;
+  transform: translateY(-55%);
+}
+.student-currs .curr .gen-info .infos .basic-info::before{ content: 'Basic Information'; }
+.student-currs .curr .gen-info .infos .units::before{ content: 'Units'; }
+.student-currs .curr .main-curr{
+  max-width: 800px;
+  margin-inline: auto;
+  width: calc(100vw - 200px);
+}
+.student-currs .curr .main-curr .year-taken,
+.student-currs .curr .main-curr .tab-nav{ user-select: none;}
+.student-currs .curr .main-curr .tab-nav{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 15px 0 0;
+}
+.student-currs .curr .main-curr .tab-nav ul{
+  display: flex;
+}
+.student-currs .curr .main-curr .tab-nav ul li{
+  background: var(--gray);
+  border-radius: 7px 7px 0 0;
+  cursor: pointer;
+  p{ padding: 5px 8px; }
+}
+.student-currs .curr .main-curr .tab-nav ul li:hover{ background: hsl(222, 8%, 77%); }
+.student-currs .curr .main-curr .tab-nav ul li.selected,
+.student-currs .curr .main-curr .tab-nav ul li.selected:hover{ background: hsl(222, 8%, 88%); }
+.student-currs .curr .main-curr .tab-nav .legend{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+}
+.student-currs .curr .main-curr .tab-nav .legend > p{ font-weight: bold; }
+.student-currs .curr .main-curr .tab-nav .legend p{ font-size: 9px; }
+.student-currs .curr .main-curr .tab-nav .legend > div{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 2px;
+}
+.student-currs .curr .main-curr .tab-nav .legend > div > div{
+  width: 12px;
+  height: 12px;
+  border: 1px solid black;
+}
+.student-currs .curr .main-curr .tab-nav .legend .taken{ background: var(--taken); }
+.student-currs .curr .main-curr .tab-nav .legend .notTaken{ background: var(--notTaken); }
+.student-currs .curr .main-curr .tab-nav .legend .preReq{ background: var(--prereq); }
+.student-currs .curr .main-curr .curriculum-lists{
+  background: linear-gradient(
+    to bottom,
+    hsl(222, 8%, 88%) 20%,
+    hsl(222, 8%, 93%)
+  );
+}
+.student-currs .curr .main-curr .curriculum-lists article{
+  display: none;
+  padding: 20px;
+  flex-direction: column;
+  min-height: 400px;
+}
+.student-currs .curr .main-curr .curriculum-lists article.show{ display: flex; }
+.student-currs .curr .main-curr .curriculum-lists .year-taken{
+  display: flex;
+  gap: 8px;
+  margin: 0 0 5px;
+}
+.student-currs .curr .main-curr .curriculum-lists .year-taken span{
+  color: #000;
+  cursor: pointer;
+}
+.student-currs .curr .main-curr .curriculum-lists .year-taken span.selected{ color: var(--l-blue); }
+.student-currs .curr .main-curr .curriculum-lists .table-cont{ overflow: auto; }
+.student-currs .curr .main-curr .curriculum-lists .curr-tables > div{
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+.student-currs .curr .main-curr .curriculum-lists .curr-tables > div.show{ display: flex; }
+.student-currs .curr .main-curr .curriculum-lists table{
+  width: 760px;
+}
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(1),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(2),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(3),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(5),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(6),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(7){ width: 5%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(10){ width: 10%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(8),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(9){ width: 15%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(4){ width: 30%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th,
+.edit-status-modal th{
+  background: hsl(0, 0%, 55%);
+  font-weight: normal;
+  text-align: center;
+  border: solid 1px hsl(0, 0%, 20%);
+}
+.student-currs .curr .main-curr .curriculum-lists table td,
+.edit-status-modal td{
+  background: #f0f0f0;
+  text-align: center;
+  text-transform: uppercase;
+  border: solid 1px hsl(0, 0%, 85%);
+}
+.student-currs .curr .main-curr .curriculum-lists table tbody tr:last-child{ border-top: solid 2px black; }
+.student-currs .curr .main-curr .curriculum-lists #Electives select{ margin: 18px 0 0 20px; }
+.student-currs .curr .main-curr .curriculum-lists #Electives > span{
+  display: flex;
+  gap: 10px;
+  margin: 0 0 5px;
+}
+.student-currs .curr .main-curr .curriculum-lists .no-course,
+.student-currs .curr .main-curr .curriculum-lists #Specialization{
+  color: red;
+  text-align: center;
+}
+.student-currs .curr .main-curr .curriculum-lists #Specialization p{ margin-top: 16px; }
+/* .edit-status-modal button{
+  display: flex;
+  float: right;
+} */
+.edit-status-modal ul,
+.edit-status-modal div.show{
+  display: flex;
+}
+.edit-status-modal li{
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  height: inherit;
+  border-radius: 7px 7px 0 0;
+  user-select: none;
+}
+.edit-status-modal button{
+  background: var(--gray);
+  padding: 5px 12px;
+  border-radius: 7px 7px 0 0;
+  user-select: none;
+}
+.edit-status-modal li.selected{
+  background: hsl(222, 8%, 88%);
+}
+.edit-status-modal .top{
+  display: flex;
+  justify-content: space-between;
+}
+.edit-status-modal :where(.edit-core, .edit-elec){
+  background: hsl(222, 8%, 88%) 20%;
+  display: none;
+  padding: 15px;
+  height: fit-content;
+}
+.edit-status-modal th:nth-child(1){
+  width: 65px;
+}
+.edit-status-modal th:nth-child(2){
+  width: 300px;
+}
+.edit-status-modal th:nth-child(3){
+  width: 30px;
+}
+/* --==Responsive==-- */
+@media(max-width: 1400px){
+  
+}
+@media(max-width: 1250px){
+
+}
+@media(max-width: 940px){
+  
+}
+@media(max-width: 740px){
+  .student-currs .curr{
+    padding: 15px 0;
+  }
+  .student-currs .curr .main-curr .curriculum-lists article{
+    padding: 13px;
+  }
+  .student-currs .curr .legend{ margin-inline: auto; }
+}
+@media(max-width: 560px){
+  .student-currs .curr .main-curr{
+    width: 100%;
+  }
+  .student-currs .curr .main-curr .curriculum-lists table{
+    width: 630px;
+  }
+}

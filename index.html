@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculums</title>
+  <link rel="shortcut icon" href="./assets/image/Crest-Icon.png" type="png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/curriculum.css">
+  <link rel="stylesheet" href="./assets/css/mCourses.css">
+  <link rel="stylesheet" href="./assets/css/grade-calculator.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+  <div class="modals">
+    <button onclick="closeModal()">
+      <svg fill="hsl(0, 0%, 90%)" viewBox="0 0 384 512">
+        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+      </svg>
+    </button>
+    <article class="grade-info-modal">
+      <div>
+        <p>Raw Score = Score / Possible Points</p>
+        <p>Raw Grade = Raw Score * Weight</p>
+        <p>Average = ∑Raw Grade</p>
+      </div>
+      <br>
+      <p>The module grades will correspond to the weighted average scores shown bellow.</p>
+      <br>
+      <table>
+        <thead>
+          <tr>
+            <th>Average</th>
+            <th>Module Grade</th>
+            <th>Average</th>
+            <th>Module Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0.01 - 69.99</td>
+            <td>IP</td>
+            <td>83.36 - 86.69</td>
+            <td>2.00</td>
+          </tr>
+          <tr>
+            <td>70.0 - 73.33</td>
+            <td>3.00</td>
+            <td>86.70 - 90.03</td>
+            <td>1.75</td>
+          </tr>
+          <tr>
+            <td>73.34 - 76.67</td>
+            <td>2.75</td>
+            <td>90.04 - 93.37</td>
+            <td>1.50</td>
+          </tr>
+          <tr>
+            <td>76.68 - 80.01</td>
+            <td>2.50</td>
+            <td>93.38 - 96.71</td>
+            <td>1.25</td>
+          </tr>
+          <tr>
+            <td>80.02 - 83.35</td>
+            <td>2.25</td>
+            <td>96.27 - 100.00</td>
+            <td>1.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+    <article class="edit-status-modal">
+      <div class="top">
+        <ul>
+          <li>
+            <a onclick="toggleEditTab()">Core Courses</a>
+          </li>
+          <li>
+            <a onclick="toggleEditTab()">Electives</a>
+          </li>
+        </ul>
+        <button onclick="updateCourseStatus()">Confirm</button>
+      </div>
+      <div class="edit-core">
+        <table>
+          <thead>
+            <tr>
+              <th>Course Code</th>
+              <th>Course Title</th>
+              <th>Taken</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="edit-elec">
+        <table>
+          <thead>
+            <tr>
+              <th>Course Code</th>
+              <th>Course Title</th>
+              <th>Taken</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </article>
+  </div>
+  <div class="scroll-container">
+    <header>
+      <div class="Burger-Cont">
+        <div class="Nav-Burger">
+          <div class="Bar Bar-Top"></div>
+          <div class="Bar Bar-Mid"></div>
+          <div class="Bar Bar-Bot"></div>
+        </div>
+      </div>
+      <img src="./assets/image/Crest-Icon.png" alt="">
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li>
+            <div class="nav-item selected" data-mainNavTab="mutual-courses">
+              <p>View Mutual Courses</p>
+            </div>
+          </li>
+          <li>
+            <div class="nav-item">
+              <p>Curriculums</p>
+            </div>
+            <ul data-mainNav></ul>
+          </li>
+          <li>
+            <div class="nav-item" data-mainNavTab="grade-calculator">
+              <p>Grade Calculator</p>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <div class="tab-windows">
+        <div class="mutual-courses show" data-mainTabWindow="mutual-courses">
+          <h1>Mutual Courses</h1>
+          <p style="display: none;">No mutual courses available.</p>
+          <ul data-mutualStudentCourses></ul>
+        </div>
+        <div class="student-currs"></div>
+        <div class="grade-calculator" data-mainTabWindow="grade-calculator">
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th width="40%">
+                    <p>Act Name</p>
+                    <span>(optional)</span>
+                  </th>
+                  <th width="20%">Score</th>
+                  <th width="20%">Possible Points</th>
+                  <th width="10%">Weight(%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1" max="100"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1" max="100"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1" max="100"></td>
+                </tr>
+                <tr>
+                  <td><input type="text"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1"></td>
+                  <td><input type="number" class="req" min="1" max="100"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="add-row" onclick="addRow()">+ add row</p>
+            <div class="grade-info" onclick="toggleGradeInfo()">
+              <p>How grade is computed</p>
+              <svg viewBox="0 0 512 512">
+                <path d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/>
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M220 220h32v116"/>
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M208 340h88"/>
+                <path d="M248 130a26 26 0 1026 26 26 26 0 00-26-26z"/>
+              </svg>
+            </div>
+            <div class="bottom">
+              <div class="grade">
+                <p>Grade:</p>
+                <input type="text" class="moduleGrade" id="moduleGrade" readonly>
+              </div>
+              <div class="btn">
+                <button class="clear" onclick="clearGradeInputs()">Clear</button>
+                <button class="submit" onclick="computeGrade()">Compute</button>
+              </div>
+            </div>
+            <div class="error"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./assets/js/dec.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/course-status.js"></script>
+  <script src="./assets/js/grade-calculator.js"></script>
+</body>
+</html>

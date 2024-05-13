@@ -1,0 +1,78 @@
+.mutual-courses{
+	padding: 20px;
+}
+.mutual-courses h1{
+  margin-bottom: 20px;
+}
+.mutual-courses p{
+  color: red;
+  text-align: center;
+}
+.mutual-courses ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.mutual-courses li{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 70%);
+  box-shadow: -5px 5px hsl(0, 0%, 70%);
+}
+.mutual-courses hr{
+  margin-block: 10px;
+  border: 1px solid hsl(0, 0%, 70%);
+}
+.mutual-courses table{
+  line-height: 1.5em;
+  width: 100%;
+}
+.mutual-courses table thead th{
+  background: hsl(0, 0%, 55%);
+  font-weight: normal;
+  text-align: center;
+  border: solid 1px hsl(0, 0%, 20%);
+}
+.mutual-courses table thead th:first-child{
+  width: 25%;
+}
+.mutual-courses table thead th:last-child{
+  width: 75%;
+}
+.mutual-courses table tbody tr:nth-child(odd) td{
+  background: hsl(0, 0%, 0%, 0.3);
+}
+.mutual-courses table tbody tr:nth-child(even) td{
+  background: hsl(0, 0%, 0%, 0.15);
+}
+.mutual-courses table tbody tr.core + tr.electives{
+  border-top: solid 2px black;
+}
+.mutual-courses table tbody td{
+  text-transform: uppercase;
+}
+.mutual-courses table th,
+.mutual-courses table td{
+  border: solid 1px hsl(0, 0%, 30%);
+}
+
+/* --==Responsive==-- */
+@media(max-width: 1400px){
+
+}
+@media(max-width: 1250px){
+
+}
+@media(max-width: 940px){
+
+}
+@media(max-width: 740px){
+  
+}
+@media(max-width: 560px){
+
+  .mutual-courses ul{
+    grid-template-columns: 1fr;
+  }
+}
