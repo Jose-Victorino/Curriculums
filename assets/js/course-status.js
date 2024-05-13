@@ -1,13 +1,13 @@
-const students = Object.keys(studentUI);
+const students = Object.keys(studentInfo);
 const ul = document.querySelector('[data-mutualStudentCourses]');
 
 function generateMutualCourses(){
-  Object.keys(studentUI).forEach((student, i) => {
+  Object.keys(studentInfo).forEach((student, i) => {
     const tab = document.querySelector(`[data-maintabwindow="student-${i + 1}"]`);
     const currs = tab.querySelector(`.curriculum-lists`);
     const coreTr = currs.querySelectorAll('#Core-Courses table tbody tr:not(:last-child)');
     const elecTr = currs.querySelectorAll('#Electives table tbody tr:not(:last-child)');
-    const stdInfo = studentUI[student];
+    const stdInfo = studentInfo[student];
     var coreTakenSum = 0;
     var elecTakenSum = 0;
     
@@ -32,7 +32,7 @@ function generateMutualCourses(){
         
       preReqs.forEach((preReq) => {
         if(!(preReq in coreStatus)) return;
-          if(coreStatus[preReq] !== 'taken')
+        if(coreStatus[preReq] !== 'taken')
           notTaken = true;
       });
       

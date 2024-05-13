@@ -58,7 +58,7 @@
   width: calc(100vw - 200px);
 }
 .student-currs .curr .main-curr .year-taken,
-.student-currs .curr .main-curr .tab-nav{ user-select: none;}
+.student-currs .curr .main-curr .tab-nav{ user-select: none; }
 .student-currs .curr .main-curr .tab-nav{
   display: flex;
   flex-wrap: wrap-reverse;
@@ -172,10 +172,6 @@
   text-align: center;
 }
 .student-currs .curr .main-curr .curriculum-lists #Specialization p{ margin-top: 16px; }
-/* .edit-status-modal button{
-  display: flex;
-  float: right;
-} */
 .edit-status-modal ul,
 .edit-status-modal div.show{
   display: flex;

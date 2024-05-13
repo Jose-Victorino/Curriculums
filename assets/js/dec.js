@@ -546,7 +546,7 @@ const courseStatus = {
     },
 	},
 };
-const studentUI = {
+const studentInfo = {
   'Jose Victorino': {
     displayName: "Jose's",
     program: 'IT',
@@ -747,8 +747,8 @@ function generateElectivesCurriculum(elec){
   return content;
 }
 
-Object.keys(studentUI).forEach((student, i) => {
-  const currentStudent = studentUI[student];
+Object.keys(studentInfo).forEach((student, i) => {
+  const currentStudent = studentInfo[student];
   var core = null;
   var elective = null;
   
@@ -757,7 +757,7 @@ Object.keys(studentUI).forEach((student, i) => {
     elective = ITCurr.elective;
   }
 
-  if(studentUI[student].defaultYear !== 3)
+  if(studentInfo[student].defaultYear !== 3)
     courseStatus[student].core.SGE100X = 'preReq';
 
   document.querySelector('[data-mainNav]').innerHTML +=

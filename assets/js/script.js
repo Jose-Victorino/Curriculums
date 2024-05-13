@@ -64,7 +64,7 @@ function courseTabReset(){
 }
 function defaultYearReset(){
 	stdCurrs.forEach((stdCurr, i) => {
-		const defaultYear = studentUI[Object.keys(studentUI)[i]].defaultYear - 1;
+		const defaultYear = studentInfo[Object.keys(studentInfo)[i]].defaultYear - 1;
 		const coreCourses = stdCurr.querySelectorAll('#Core-Courses span');
 		const currTables = stdCurr.querySelector('.curr-tables').children;
 		
