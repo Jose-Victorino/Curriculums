@@ -8,17 +8,22 @@
   color: red;
   text-align: center;
 }
-.mutual-courses ul{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.mutual-courses ul{ 
+  /* display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+  column-count: 4; /*Pinterest style (Masonry)*/
   gap: 20px;
 }
 .mutual-courses li{
+  page-break-inside: avoid;
   display: flex;
   flex-direction: column;
   padding: 10px;
   border: 1px solid hsl(0, 0%, 70%);
   box-shadow: -5px 5px hsl(0, 0%, 70%);
+}
+.mutual-courses li:not(:first-child){
+  margin-top: 20px;
 }
 .mutual-courses hr{
   margin-block: 10px;
@@ -63,12 +68,19 @@
 }
 @media(max-width: 1250px){
 
+  .mutual-courses ul{
+    column-count: 3;
+  }
 }
 @media(max-width: 940px){
-
+  .mutual-courses ul{
+    column-count: 2;
+  }
 }
 @media(max-width: 740px){
-  
+  .mutual-courses ul{
+    column-count: 1;
+  }
 }
 @media(max-width: 560px){
 

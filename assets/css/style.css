@@ -34,7 +34,7 @@ body{
 .scroll-container{
   overflow: hidden auto;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
 }
 h1, h2, h3, h4, h5, h6, p, span, a{ line-height: 100%; }
 h1{ font-size: var(--fs-20-24); }
