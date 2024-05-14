@@ -56,110 +56,80 @@ function generateMutualCourses(){
     }
   });
 
-  const allMutualCourses = [];
-  var allCombinations = [];
-  
-  for(let j = 1; j < Math.pow(2, students.length); j++){
-    const combination = [];
-  
-    for(let k = 0; k < students.length; k++)
-      if((j & (1 << k)) !== 0)
-        combination.push(students[k]);
-    
-    if(combination.length > 1)
-      allCombinations.push(combination);
-  }
+  const mergedCourses = { core: {}, elective: {} };
+  const allMutualCourses = {};
+  const sortedMutualCourses = {};
 
-  allCombinations.forEach((names, i) => {
-    const allNotTakenCourses = [];
-
-    names.forEach((student) => {
-      const notTakenCourses = [];
-      const core = courseStatus[student].core;
-      const elec = courseStatus[student].elective;
-    
-      Object.keys(core).forEach((course) => {
-        if(core[course] === 'notTaken')
-          notTakenCourses.push(course);
-      });
-      Object.keys(elec).forEach((course) => {
-        if(elec[course] === 'notTaken')
-          notTakenCourses.push(course);
-      });
-    
-      allNotTakenCourses.push(notTakenCourses);
-    });
-    
-    const mutualCourses = allNotTakenCourses.reduce((array, currentCourses) => {
-      return array.filter(course => currentCourses.includes(course));
-    });
-    
-    if(mutualCourses.length > 0)
-      allMutualCourses.push(mutualCourses);
+  for(const student in courseStatus)
+  for(const curriculumType in courseStatus[student])
+  for(const course in courseStatus[student][curriculumType])
+  if(courseStatus[student][curriculumType][course] === 'notTaken'){
+    if(!mergedCourses[curriculumType][course])
+      mergedCourses[curriculumType][course] = [student];
     else
-      allCombinations.splice(i, 1);
-  });
+      mergedCourses[curriculumType][course].push(student);
+  }
 
-  if(allMutualCourses == 0)
+  if(Object.keys(mergedCourses.core).length === 0 && Object.keys(mergedCourses.elective).length === 0){
     document.querySelector('.mutual-courses p').style.display = 'block';
+    return 0;
+  }
 
-  for(let i = allMutualCourses.length - 1; i >= 0; i--){
-    for(let j = 0; j < i; j++){
-      var occurrence = [];
-
-      occurrence = allCombinations[j].filter(num => {
-        return allCombinations[i].includes(num);
-      });
-
-      if(occurrence.length > 1)
-        allMutualCourses[j] = allMutualCourses[j].filter(course => {
-          return !allMutualCourses[i].includes(course);
-        });
-    }
-    
-    if(allMutualCourses[i].length === 0){
-      allMutualCourses.splice(i, 1);
-      allCombinations.splice(i, 1);
+  for(const curriculumType in mergedCourses)
+  for(const course in mergedCourses[curriculumType]){
+    if(mergedCourses[curriculumType][course].length > 1){
+      const students = mergedCourses[curriculumType][course].sort().join('-');
+      if(!allMutualCourses[students])
+        allMutualCourses[students] = [course];
+      else
+        allMutualCourses[students].push(course);
     }
   }
 
+  var line = 1;
+  var count = 0;
+  while(count < Object.keys(allMutualCourses).length){
+    for(const name in allMutualCourses)
+    if(name.split('').filter(char => char === '-').length === line){
+      sortedMutualCourses[name] = allMutualCourses[name];
+      count++;
+    }
+    line++;
+  }
+  
   ul.innerHTML = '';
-  allMutualCourses.forEach((mutualCourses, i) => {
-    const names = [];
+  for(const names in sortedMutualCourses){
+    var content =
+    `<li>` +
+      `<div><span>${names.split('-').join(', ')}</span></div>` +
+      `<hr>` +
+      `<table>` +
+        `<thead>` +
+          `<tr>` +
+            `<th>Course Code</th>` +
+            `<th>Course Title</th>` +
+          `</tr>` +
+        `</thead>` +
+        `<tbody>`;
+    for(const course in sortedMutualCourses[names]){
+      const courseCode = sortedMutualCourses[names][course];
+      var currType = '';
 
-    for(let j = 0; j < allCombinations[i].length; j++)
-      names.push(allCombinations[i][j]);
-    var content = 
-    '<li>' +
-      '<div><span>' + names.join(', ') + '</span></div>' +
-      '<hr>' +
-      '<table>' +
-        '<thead>' +
-          '<tr>' +
-            '<th>Course Code</th>' +
-            '<th>Course Title</th>' +
-          '</tr>' +
-        '</thead>' +
-        '<tbody>';
-
-    mutualCourses.forEach((course) => {
-      var currType = null;
-
-      if(course in ITCurr.core)
+      if(courseCode in ITCurr.core)
         currType = 'core';
-      if(course in ITCurr.elective)
+      if(courseCode in ITCurr.elective)
         currType = 'elective';
 
       content += 
         `<tr class="${currType}">` +
-          `<td>${ITCurr[currType][course][2]}</td>` +
-          `<td>${ITCurr[currType][course][3]}</td>` +
+          `<td>${courseCode}</td>` +
+          `<td>${ITCurr[currType][courseCode][3]}</td>` +
         '</tr>';
-    });
+    }
 
     content += '</tbody></table></li>';
     ul.innerHTML += content;
-  });
+  }
 }
 
 const modal = document.querySelector('.modals');

@@ -433,76 +433,76 @@ const courseStatus = {
       ITS175: 'notTaken',
     },
 	},
-	'': {
-    core:{
+	'Mark Artista': {
+    core: {
       // 1st Year
-      CSS121: 'notTaken',
-      CSS121L: 'notTaken',
-      'FW01-1': 'notTaken',
-      GED101: 'notTaken',
-      GED117: 'notTaken',
-      ITS100: 'notTaken',
-      NSTP100: 'notTaken',
+      CSS121: 'taken',
+      CSS121L: 'taken',
+      'FW01-1': 'taken',
+      GED101: 'taken',
+      GED117: 'taken',
+      ITS100: 'taken',
+      NSTP100: 'taken',
   
-      CSS122: 'notTaken',
-      CSS122L: 'notTaken',
-      'FW02-1': 'notTaken',
-      GED103: 'notTaken',
-      GED108: 'notTaken',
-      ISS120: 'notTaken',
-      ITS110L: 'notTaken',
-      NSTP200: 'notTaken',
+      CSS122: 'taken',
+      CSS122L: 'taken',
+      'FW02-1': 'taken',
+      GED103: 'taken',
+      GED108: 'taken',
+      ISS120: 'taken',
+      ITS110L: 'taken',
+      NSTP200: 'taken',
   
-      'FW03-1': 'notTaken',
-      GED102: 'notTaken',
-      GED104: 'notTaken',
-      ITS112: 'notTaken',
-      ITS112L: 'notTaken',
-      ITS121L: 'notTaken',
-      ITS131: 'notTaken',
-      ITS131L: 'notTaken',
-      NSTP300: 'notTaken',
+      'FW03-1': 'taken',
+      GED102: 'taken',
+      GED104: 'taken',
+      ITS112: 'taken',
+      ITS112L: 'taken',
+      ITS121L: 'taken',
+      ITS131: 'taken',
+      ITS131L: 'taken',
+      NSTP300: 'taken',
   
-      CSS130: 'notTaken',
-      'FW04-1': 'notTaken',
-      GED105: 'notTaken',
-      GED110: 'notTaken',
+      CSS130: 'taken',
+      'FW04-1': 'taken',
+      GED105: 'taken',
+      GED110: 'taken',
       ITS150: 'notTaken',
       ITS150L: 'notTaken',
-      ITS161L: 'notTaken',
-      NSTP400: 'notTaken',
+      ITS161L: 'taken',
+      NSTP400: 'taken',
       
       // 2nd Year
-      CSS123: 'notTaken',
-      CSS123L: 'notTaken',
-      CSS131: 'notTaken',
-      CSS140: 'notTaken',
-      ITS162L: 'notTaken',
-      'MATH154-1': 'notTaken',
+      CSS123: 'taken',
+      CSS123L: 'taken',
+      CSS131: 'taken',
+      CSS140: 'taken',
+      ITS162L: 'taken',
+      'MATH154-1': 'taken',
   
-      CSS124: 'notTaken',
-      CSS124L: 'notTaken',
-      CSS145: 'notTaken',
-      GED109: 'notTaken',
-      ITS122: 'notTaken',
-      ITS122L: 'notTaken',
+      CSS124: 'taken',
+      CSS124L: 'taken',
+      CSS145: 'taken',
+      GED109: 'taken',
+      ITS122: 'taken',
+      ITS122L: 'taken',
       ITS163L: 'notTaken',
   
-      GED106: 'notTaken',
-      ITS132: 'notTaken',
-      ITS132L: 'notTaken',
-      ITS141: 'notTaken',
-      ITS151: 'notTaken',
-      ITS151L: 'notTaken',
+      GED106: 'taken',
+      ITS132: 'taken',
+      ITS132L: 'taken',
+      ITS141: 'taken',
+      ITS151: 'taken',
+      ITS151L: 'taken',
       ITS164L: 'notTaken',
-      ITS165: 'notTaken',
+      ITS165: 'taken',
   
-      GED107: 'notTaken',
+      GED107: 'taken',
       ITS142: 'notTaken',
       ITS142L: 'notTaken',
       ITS152: 'notTaken',
       ITS152L: 'notTaken',
-      RZL110: 'notTaken',
+      RZL110: 'taken',
   
       // 3rd Year
       ITS109: 'notTaken',
@@ -573,6 +573,15 @@ const studentInfo = {
     specialization: 'Unassigned',
     unitsRequired: 171,
     defaultUnitsPassed: 16,
+  },
+  'Mark Artista': {
+    displayName: "Mark's",
+    program: 'IT',
+    defaultYear: 2,
+    curriculumYear: 2022,
+    specialization: 'Unassigned',
+    unitsRequired: 171,
+    defaultUnitsPassed: 32,
   },
 }
 
@@ -873,7 +882,7 @@ function getIntVal(val){
   return newval;
 }
 
-// var itCurrTableSQL = "INSERT INTO `it curriculum` (`curriculumType`,`Year`, `Term`, `Course Code`, `Course Title`, `Lec Hrs`, `Lab Hrs`, `Credit Units`, `Pre-Requisites`, `Co-Requisites`, `Paired Courses`) VALUES";
+// var itCurrTableSQL = "INSERT INTO `it curriculum` (`curriculumType`,`Year`, `Term`, `Course Code`, `Course Title`, `Lec Hrs`, `Lab Hrs`, `Credit Units`, `Pre-Requisites`, `Co-Requisites`, `Paired Courses`)\nVALUES\n";
 // Object.keys(ITCurr).forEach((currType, i) => {
 //   if(typeof ITCurr[currType] === 'object'){
 //     Object.keys(ITCurr[currType]).forEach((course, j) => {
@@ -885,3 +894,23 @@ function getIntVal(val){
 //   }
 // });
 // console.log(itCurrTableSQL);
+
+// var coreStatusTableSQL = "INSERT INTO `course status` (`name`, `curriculumType`, `Course Code`, `status`)\nVALUES\n";
+// Object.keys(courseStatus).forEach((name) => {
+//   const curriculumTypes = courseStatus[name];
+//   Object.keys(curriculumTypes).forEach((curriculumType) => {
+//     const courses = curriculumTypes[curriculumType]
+//     Object.keys(courses).forEach((course) => {
+//       if(name === 'Nikkos Dantes')
+//         coreStatusTableSQL += `("${name}", "${curriculumType}", "${course}", "${courses[course]}"),\n`;
+//     })
+//   });
+// });
+// console.log(coreStatusTableSQL);
+
+// var studentInfoTableSQL = "INSERT INTO `students` (`name`, `displayName`, `program`, `defaultYear`, `curriculumYear`, `specialization`, `unitsRequired`, `defaultUnitsPassed`)\nVALUES\n";
+// Object.keys(studentInfo).forEach((name, i) => {
+//   studentInfoTableSQL += `("${name}", "${studentInfo[name].displayName}", "${studentInfo[name].program}", ${studentInfo[name].defaultYear}, ${studentInfo[name].curriculumYear}, "${studentInfo[name].specialization}", ${studentInfo[name].unitsRequired}, ${studentInfo[name].defaultUnitsPassed})`;
+//   studentInfoTableSQL += (Object.keys(studentInfo).length === (i + 1)) ? ';' : ',\n';
+// });
+// console.log(studentInfoTableSQL);
