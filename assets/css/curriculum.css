@@ -53,7 +53,7 @@
 .student-currs .curr .gen-info .infos .basic-info::before{ content: 'Basic Information'; }
 .student-currs .curr .gen-info .infos .units::before{ content: 'Units'; }
 .student-currs .curr .main-curr{
-  max-width: 800px;
+  max-width: 780px;
   margin-inline: auto;
   width: calc(100vw - 200px);
 }
@@ -73,8 +73,8 @@
   background: var(--gray);
   border-radius: 7px 7px 0 0;
   cursor: pointer;
-  p{ padding: 5px 8px; }
 }
+.student-currs .curr .main-curr .tab-nav ul li p{ padding: 5px 8px; }
 .student-currs .curr .main-curr .tab-nav ul li:hover{ background: hsl(222, 8%, 77%); }
 .student-currs .curr .main-curr .tab-nav ul li.selected,
 .student-currs .curr .main-curr .tab-nav ul li.selected:hover{ background: hsl(222, 8%, 88%); }
@@ -98,9 +98,12 @@
   height: 12px;
   border: 1px solid black;
 }
+.student-currs .curr .main-curr .tab-nav .legend .inLoad{ background: var(--inLoad); }
 .student-currs .curr .main-curr .tab-nav .legend .taken{ background: var(--taken); }
 .student-currs .curr .main-curr .tab-nav .legend .notTaken{ background: var(--notTaken); }
 .student-currs .curr .main-curr .tab-nav .legend .preReq{ background: var(--prereq); }
+.student-currs .curr .main-curr .tab-nav .legend .incomplete{ background: var(--incomplete); }
+.student-currs .curr .main-curr .tab-nav .legend .credited{ background: var(--credited); }
 .student-currs .curr .main-curr .curriculum-lists{
   background: linear-gradient(
     to bottom,
@@ -125,32 +128,36 @@
   cursor: pointer;
 }
 .student-currs .curr .main-curr .curriculum-lists .year-taken span.selected{ color: var(--l-blue); }
-.student-currs .curr .main-curr .curriculum-lists .table-cont{ overflow: auto; }
 .student-currs .curr .main-curr .curriculum-lists .curr-tables > div{
   display: none;
   flex-direction: column;
-  gap: 15px;
 }
 .student-currs .curr .main-curr .curriculum-lists .curr-tables > div.show{ display: flex; }
-.student-currs .curr .main-curr .curriculum-lists table{
-  width: 760px;
-}
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(1),
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(2),
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(3),
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(5),
+.student-currs .curr .main-curr .curriculum-lists table{ width: 740px; }
+.student-currs .curr .main-curr .curriculum-lists .curr-tables > div .table-cont{ overflow: auto; }
+.student-currs .curr .main-curr .curriculum-lists .curr-tables > div .table-cont:not(:last-child){ margin-bottom: 10px; }
+.student-currs .curr .main-curr .curriculum-lists .curr-tables > div > p{ margin-bottom: 4px; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(3)
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(4),
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(5){ width: 5%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(1){ width: 8%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(8){ width: 10%; }
 .student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(6),
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(7){ width: 5%; }
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(10){ width: 10%; }
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(8),
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(9){ width: 15%; }
-.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(4){ width: 30%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(7){ width: 15%; }
+.student-currs .curr .main-curr .curriculum-lists table thead th:nth-child(2){ width: 37%; }
 .student-currs .curr .main-curr .curriculum-lists table thead th,
 .edit-status-modal th{
   background: hsl(0, 0%, 55%);
   font-weight: normal;
   text-align: center;
   border: solid 1px hsl(0, 0%, 20%);
+}
+.edit-status-modal label{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 5px 4px;
 }
 .student-currs .curr .main-curr .curriculum-lists table td,
 .edit-status-modal td{
@@ -159,13 +166,14 @@
   text-transform: uppercase;
   border: solid 1px hsl(0, 0%, 85%);
 }
-.student-currs .curr .main-curr .curriculum-lists table tbody tr:last-child{ border-top: solid 2px black; }
+.edit-status-modal td{ padding: 0}
 .student-currs .curr .main-curr .curriculum-lists #Electives select{ margin: 18px 0 0 20px; }
 .student-currs .curr .main-curr .curriculum-lists #Electives > span{
   display: flex;
   gap: 10px;
   margin: 0 0 5px;
 }
+.student-currs .curr .main-curr .curriculum-lists #Electives > p{ margin-bottom: 4px; }
 .student-currs .curr .main-curr .curriculum-lists .no-course,
 .student-currs .curr .main-curr .curriculum-lists #Specialization{
   color: red;
@@ -237,6 +245,6 @@
     width: 100%;
   }
   .student-currs .curr .main-curr .curriculum-lists table{
-    width: 630px;
+    width: 610px;
   }
 }

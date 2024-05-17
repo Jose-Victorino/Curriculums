@@ -1,99 +1,101 @@
-const ITCurr = {
-  core: {
-    'CSS121': [1, 1, 'CSS121', 'COMPUTER PROGRAMMING 1', 3, '-', 2, '', '', ''],
-    'CSS121L': [1, 1, 'CSS121L', 'COMPUTER PROGRAMMING LABORATORY 1', '-', 4.5, 1, '', 'CSS121', ''],
-    'FW01-1': [1, 1, 'FW01-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 1 (PATHFIT 1): MOVEMENT COMPETENCY TRAINING', 3, '-', 2, '', '', ''],
-    'GED101': [1, 1, 'GED101', 'UNDERSTANDING THE SELF', 4.5, '-', 3, '', '', ''],
-    'GED117': [1, 1, 'GED117', 'GREAT BOOKS', 4.5, '-', 3, '', '', ''],
-    'ITS100': [1, 1, 'ITS100', 'INTRODUCTION TO INFORMATION TECHNOLOGY', 4.5, '-', 3, '', '', ''],
-    'NSTP100': [1, 1, 'NSTP100', 'NATIONAL SERVICE TRAINING PROGRAM 1', '-', 4.5, 1.5, '', '', ''],
-    'CSS122': [1, 2, 'CSS122', 'COMPUTER PROGRAMMING 2', 3, '-', 2, 'CSS121, CSS121L', '', ''],
-    'CSS122L': [1, 2, 'CSS122L', 'COMPUTER PROGRAMMING LABORATORY 2', '-', 4.5, 1, 'CSS121, CSS121L', 'CSS122', ''],
-    'FW02-1': [1, 2, 'FW02-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 2 (PATHFIT 2): EXERCISE-BASED FITNESS ACTIVITIES', 3, '-', 2, 'FW01-1', '', ''],
-    'GED103': [1, 2, 'GED103', 'READINGS IN PHILIPPINE HISTORY', 4.5, '-', 3, '', '', ''],
-    'GED108': [1, 2, 'GED108', 'ART APPRECIATION', 4.5, '-', 3, '', '', ''],
-    'ISS120': [1, 2, 'ISS120', 'INFORMATION SYSTEMS AND BUSINESS PROCESSES', 4.5, '-', 3, 'ITS100', '', ''],
-    'ITS110L': [1, 2, 'ITS110L', 'COMPUTER HARDWARE AND TROUBLESHOOTING', '-', 4.5, 1, '', '', ''],
-    'NSTP200': [1, 2, 'NSTP200', 'NATIONAL SERVICE TRAINING PROGRAM 2', '-', 4.5, 1.5, 'NSTP100', '', ''],
-    'FW03-1': [1, 3, 'FW03-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 3 (PATHFIT 3): DANCE / MARTIAL ARTS', 3, '-', 2, 'FW01-1, FW01-2', '', ''],
-    'GED102': [1, 3, 'GED102', 'MATHEMATICS IN THE MODERN WORLD', 4.5, '-', 3, '', '', ''],
-    'GED104': [1, 3, 'GED104', 'SCIENCE, TECHNOLOGY AND SOCIETY', 4.5, '-', 3, '', '', ''],
-    'ITS112': [1, 3, 'ITS112', 'COMPUTER ARCHITECTURE AND ORGANIZATION', 3, '-', 2, 'CSS121, CSS121L', '', ''],
-    'ITS112L': [1, 3, 'ITS112L', 'COMPUTER ARCHITECTURE AND ORGANIZATION LABORATORY', '-', 4.5, 1, 'CSS121, CSS121L', 'ITS112', ''],
-    'ITS121L': [1, 3, 'ITS121L', 'WEB SYSTEMS AND TECHNOLOGIES 1 LABORATORY', '-', 4.5, 1, 'CSS121, CSS121L', '', ''],
-    'ITS131': [1, 3, 'ITS131', 'INFORMATION MANAGEMENT', 3, '-', 2, 'CSS121, CSS121L', '', ''],
-    'ITS131L': [1, 3, 'ITS131L', 'INFORMATION MANAGEMENT LABORATORY', '-', 4.5, 1, 'CSS121, CSS121L', 'ITS131', ''],
-    'NSTP300': [1, 3, 'NSTP300', 'NATIONAL SERVICE TRAINING PROGRAM 3', '-', 4.5, 1.5, 'NSTP200', '', ''],
-    'CSS130': [1, 4, 'CSS130', 'DATA STRUCTURES AND ALGORITHMS', 4.5, '-', 3, 'CSS122, CSS122L', '', ''],
-    'FW04-1': [1, 4, 'FW04-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 4 (PATHFIT 4): GROUP EXERCISE', 3, '-', 2, 'FW01-1, FW02-1, FW03-1', '', ''],
-    'GED105': [1, 4, 'GED105', 'THE CONTEMPORARY WORLD', 4.5, '-', 3, '', '', ''],
-    'GED110': [1, 4, 'GED110', 'PEOPLE AND EARTH S ECOSYSTEM', 4.5, '-', 3, '', '', ''],
-    'ITS150': [1, 4, 'ITS150', 'OPERATING SYSTEMS', 3, '-', 2, 'ITS121, ITS121L', '', ''],
-    'ITS150L': [1, 4, 'ITS150L', 'OPERATING SYSTEMS LABORATORY', '-', 4.5, 1, 'ITS121, ITS121L', 'ITS150', ''],
-    'ITS161L': [1, 4, 'ITS161L', 'FUNDAMENTALS OF COMPUTER NETWORK 1', '-', 4.5, 1, 'CSS121, CSS121L', '', ''],
-    'NSTP400': [1, 4, 'NSTP400', 'NATIONAL SERVICE TRAINING PROGRAM 4', '-', 4.5, 1.5, 'NSTP300', '', ''],
-    'CSS123': [2, 1, 'CSS123', 'OBJECT-ORIENTED PROGRAMMING', 3, '-', 2, 'ITS131, ITS131L', '', ''],
-    'CSS123L': [2, 1, 'CSS123L', 'OBJECT-ORIENTED PROGRAMMING LABORATORY', '-', 4.5, 1, 'ITS131, ITS131L', 'CSS123', ''],
-    'CSS131': [2, 1, 'CSS131', 'DISCRETE MATHEMATICS 1', 4.5, '-', 3, 'CSS121, CSS121L', '', ''],
-    'CSS140': [2, 1, 'CSS140', 'ARTIFICIAL INTELLIGENCE', 4.5, '-', 3, 'CSS130', '', ''],
-    'ITS162L': [2, 1, 'ITS162L', 'FUNDAMENTALS OF COMPUTER NETWORK 2', '-', 9, 2, 'ITS161L', '', ''],
-    'MATH154-1': [2, 1, 'MATH154-1', 'QUANTITATIVE METHODS', 4.5, '-', 3, '', '', ''],
-    'CSS124': [2, 2, 'CSS124', 'EVENT-DRIVEN/GUI PROGRAMMING', 3, '-', 2, 'CSS123, CSS123L', '', ''],
-    'CSS124L': [2, 2, 'CSS124L', 'EVENT-DRIVEN/GUI PROGRAMMING LABORATORY', '-', 4.5, 1, 'CSS123, CSS123L', 'CSS124', ''],
-    'CSS145': [2, 2, 'CSS145', 'INTRODUCTION TO DATA SCIENCE', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
-    'GED109': [2, 2, 'GED109', 'GENDER AND SOCIETY', 4.5, '-', 3, '', '', ''],
-    'ITS122': [2, 2, 'ITS122', 'WEB SYSTEMS AND TECHNOLOGIES 2', 3, '-', 2, 'ITS121L, ITS131, ITS131L', '', ''],
-    'ITS122L': [2, 2, 'ITS122L', 'WEB SYSTEMS AND TECHNOLOGIES 2 LABORATORY', '-', 4.5, 1, 'ITS121L, ITS131, ITS131L', 'ITS122', ''],
-    'ITS163L': [2, 2, 'ITS163L', 'ADVANCED COMPUTER NETWORK 1', '-', 9, 2, 'ITS162L', '', ''],
-    'GED106': [2, 3, 'GED106', 'PURPOSIVE COMMUNICATION', 4.5, '-', 3, '', '', ''],
-    'ITS132': [2, 3, 'ITS132', 'DATA WAREHOUSING AND DATA MINING', 3, '-', 2, 'CSS145, ITS131, ITS131L', '', ''],
-    'ITS132L': [2, 3, 'ITS132L', 'DATA WAREHOUSING AND DATA MINING LABORATORY', '-', 4.5, 1, 'CSS145, ITS131, ITS131L', 'ITS132', ''],
-    'ITS141': [2, 3, 'ITS141', 'HUMAN-COMPUTER INTERACTION 1', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-    'ITS151': [2, 3, 'ITS151', 'SYSTEMS INTEGRATION AND ARCHITECTURE 1', 3, '-', 2, 'CSS124, CSS124L, ISS120', '', ''],
-    'ITS151L': [2, 3, 'ITS151L', 'SYSTEMS INTEGRATION AND ARCHITECTURE 1 LABORATORY', '-', 4.5, 1, 'CSS124, CSS124L, ISS120', 'ITS151', ''],
-    'ITS164L': [2, 3, 'ITS164L', 'ADVANCED COMPUTER NETWORK 2', '-', 4.5, 1, 'ITS163L', '', ''],
-    'ITS165': [2, 3, 'ITS165', 'INFORMATION ASSURANCE AND SECURITY 1', 4.5, '-', 3, 'ITS131, ITS131L, ITS161L', '', ''],
-    'GED107': [2, 4, 'GED107', 'ETHICS', 4.5, '-', 3, '', '', ''],
-    'ITS142': [2, 4, 'ITS142', 'HUMAN-COMPUTER INTERACTION 2', 3, '-', 2, 'ITS141', '', ''],
-    'ITS142L': [2, 4, 'ITS142L', 'HUMAN-COMPUTER INTERACTION 2 LABORATORY', '-', 4.5, 1, 'ITS141', 'ITS142', ''],
-    'ITS152': [2, 4, 'ITS152', 'SYSTEMS INTEGRATION AND ARCHITECTURE 2', 3, '-', 2, 'ITS151, ITS151L', '', ''],
-    'ITS152L': [2, 4, 'ITS152L', 'SYSTEMS INTEGRATION AND ARCHITECTURE 2 LABORATORY', '-', 4.5, 1, 'ITS151, ITS151L', 'ITS152', ''],
-    'RZL110': [2, 4, 'RZL110', 'THE LIFE AND WORKS OF RIZAL', 4.5, '-', 3, '', '', ''],
-    'ITS109': [3, 1, 'ITS109', 'RESEARCH METHODS IN INFORMATION TECHNOLOGY', 4.5, '-', 3, 'ITS152, ITS152L', '', ''],
-    'ITS120': [3, 1, 'ITS120', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES', 3, '-', 2, 'CSS124, CSS124L', '', ''],
-    'ITS120L': [3, 1, 'ITS120L', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES LABORATORY', '-', 4.5, 1, 'CSS124, CSS124L', '', ''],
-    'ITS153': [3, 1, 'ITS153', 'SYSTEMS ADMINISTRATION AND MAINTENANCE', 3, '-', 2, 'ITS152, ITS152L, ITS164L', '', ''],
-    'ITS153L': [3, 1, 'ITS153L', 'SYSTEMS ADMINISTRATION AND MAINTENANCE LABORATORY', '-', 4.5, 1, 'ITS152, ITS152L, ITS164L', 'ITS153', ''],
-    'ITS166': [3, 1, 'ITS166', 'INFORMATION SECURITY AND ASSURANCE 2', 3, '-', 2, 'ITS165', '', ''],
-    'ITS166L': [3, 1, 'ITS166L', 'INFORMATION SECURITY AND ASSURANCE 2 LABORATORY', '-', 4.5, 1, 'ITS165', 'ITS166', ''],
-    'CSS153': [3, 2, 'CSS153', 'SOFTWARE QUALITY', 3, '-', 2, 'ITS142, ITS142L', '', ''],
-    'CSS153L': [3, 2, 'CSS153L', 'SOFTWARE QUALITY LABORATORY', '-', 4.5, 1, 'ITS142, ITS142L', 'CSS153', ''],
-    'ISS160': [3, 2, 'ISS160', 'PROJECT MANAGEMENT', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-    'ITS105': [3, 2, 'ITS105', 'SOCIAL AND PROFESSIONAL ISSUES', 4.5, '-', 3, 'GED107, ITS141', '', ''],
-    'ITS200-1': [3, 2, 'ITS200-1', 'THESIS 1', 1.5, '-', 1, 'ITS109', '', ''],
-    'ITS199-1R': [3, 3, 'ITS199-1R', 'PRACTICUM 1', 4.5, '-', 3, 'ITS105', '', ''],
-    'ITS200-2': [3, 3, 'ITS200-2', 'THESIS 2', 4.5, '-', 1, 'ITS200-1', '', ''],
-    'ITS198F': [3, 4, 'ITS198F', 'CAREER DEVELOPMENT AND SEMINAR IN IT', '-', 4.5, 1, 'FOR GRADUATING STUDENTS ONLY', '', ''],
-    'ITS199-2R': [3, 4, 'ITS199-2R', 'PRACTICUM 2', 4.5, '-', 3, 'ITS199-1R', '', ''],
-    'ITS200-3': [3, 4, 'ITS200-3', 'THESIS 3', 4.5, '-', 1, 'ITS200-2', '', ''],
-    'SGE100X': [3, 4, 'SGE100X', 'STUDENT GLOBAL EXPERIENCE', '-', '-', '(0)', '3RD YEAR STANDING', '', ''],
-  },
-	elective: {
-		'CSS171': [3, 3, 'CSS171', 'GRAPHICS AND VISUAL COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'CSS172': [3, 3, 'CSS172', 'PATTERN RECOGNITION', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'CSS173': [3, 3, 'CSS173', 'PARALLEL AND DISTRIBUTED COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'ECS176': [3, 3, 'ECS176', 'INTRODUCTION TO GAME PROGRAMMING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'ISS170': [3, 3, 'ISS170', 'TECHNOPRENEURSHIP', 4.5, '-', 3, 'ITS132, ITS132L', '', ''],
-		'ISS171': [3, 3, 'ISS171', 'SUPPLY CHAIN MANAGEMENT', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
-		'ISS172': [3, 3, 'ISS172', 'CUSTOMER RELATIONS MANAGEMENT', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
-		'ISS173': [3, 3, 'ISS173', 'ESSENTIAL OF SAS', 4.5, '-', 3, 'MATH154-1', '', ''],
-		'ISS174': [3, 3, 'ISS174', 'IT AUDIT AND CONTROL', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
-		'ITS170': [3, 3, 'ITS170', 'IT INFRASTRUCTURE LIBRARY FOUNDATION COURSE', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
-		'ITS171': [3, 3, 'ITS171', 'FUNDAMENTALS OF SAP', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
-		'ITS172': [3, 3, 'ITS172', 'MOBILE APPLICATION DEVELOPMENT', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'ITS173': [3, 3, 'ITS173', 'EMBEDDED SYSTEMS', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'ITS174': [3, 3, 'ITS174', 'INTERNET OF THINGS', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-		'ITS175': [3, 3, 'ITS175', 'CLOUD COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+const programCurriculum = {
+  IT: {
+    core: {
+      'CSS121': [1, 1, 'CSS121', 'COMPUTER PROGRAMMING 1', 3, '-', 2, '', '', ''],
+      'CSS121L': [1, 1, 'CSS121L', 'COMPUTER PROGRAMMING LABORATORY 1', '-', 4.5, 1, '', 'CSS121', ''],
+      'FW01-1': [1, 1, 'FW01-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 1 (PATHFIT 1): MOVEMENT COMPETENCY TRAINING', 3, '-', 2, '', '', ''],
+      'GED101': [1, 1, 'GED101', 'UNDERSTANDING THE SELF', 4.5, '-', 3, '', '', ''],
+      'GED117': [1, 1, 'GED117', 'GREAT BOOKS', 4.5, '-', 3, '', '', ''],
+      'ITS100': [1, 1, 'ITS100', 'INTRODUCTION TO INFORMATION TECHNOLOGY', 4.5, '-', 3, '', '', ''],
+      'NSTP100': [1, 1, 'NSTP100', 'NATIONAL SERVICE TRAINING PROGRAM 1', '-', 4.5, 1.5, '', '', ''],
+      'CSS122': [1, 2, 'CSS122', 'COMPUTER PROGRAMMING 2', 3, '-', 2, 'CSS121, CSS121L', '', ''],
+      'CSS122L': [1, 2, 'CSS122L', 'COMPUTER PROGRAMMING LABORATORY 2', '-', 4.5, 1, 'CSS121, CSS121L', 'CSS122', ''],
+      'FW02-1': [1, 2, 'FW02-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 2 (PATHFIT 2): EXERCISE-BASED FITNESS ACTIVITIES', 3, '-', 2, 'FW01-1', '', ''],
+      'GED103': [1, 2, 'GED103', 'READINGS IN PHILIPPINE HISTORY', 4.5, '-', 3, '', '', ''],
+      'GED108': [1, 2, 'GED108', 'ART APPRECIATION', 4.5, '-', 3, '', '', ''],
+      'ISS120': [1, 2, 'ISS120', 'INFORMATION SYSTEMS AND BUSINESS PROCESSES', 4.5, '-', 3, 'ITS100', '', ''],
+      'ITS110L': [1, 2, 'ITS110L', 'COMPUTER HARDWARE AND TROUBLESHOOTING', '-', 4.5, 1, '', '', ''],
+      'NSTP200': [1, 2, 'NSTP200', 'NATIONAL SERVICE TRAINING PROGRAM 2', '-', 4.5, 1.5, 'NSTP100', '', ''],
+      'FW03-1': [1, 3, 'FW03-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 3 (PATHFIT 3): DANCE / MARTIAL ARTS', 3, '-', 2, 'FW01-1, FW01-2', '', ''],
+      'GED102': [1, 3, 'GED102', 'MATHEMATICS IN THE MODERN WORLD', 4.5, '-', 3, '', '', ''],
+      'GED104': [1, 3, 'GED104', 'SCIENCE, TECHNOLOGY AND SOCIETY', 4.5, '-', 3, '', '', ''],
+      'ITS112': [1, 3, 'ITS112', 'COMPUTER ARCHITECTURE AND ORGANIZATION', 3, '-', 2, 'CSS121, CSS121L', '', ''],
+      'ITS112L': [1, 3, 'ITS112L', 'COMPUTER ARCHITECTURE AND ORGANIZATION LABORATORY', '-', 4.5, 1, 'CSS121, CSS121L', 'ITS112', ''],
+      'ITS121L': [1, 3, 'ITS121L', 'WEB SYSTEMS AND TECHNOLOGIES 1 LABORATORY', '-', 4.5, 1, 'CSS121, CSS121L', '', ''],
+      'ITS131': [1, 3, 'ITS131', 'INFORMATION MANAGEMENT', 3, '-', 2, 'CSS121, CSS121L', '', ''],
+      'ITS131L': [1, 3, 'ITS131L', 'INFORMATION MANAGEMENT LABORATORY', '-', 4.5, 1, 'CSS121, CSS121L', 'ITS131', ''],
+      'NSTP300': [1, 3, 'NSTP300', 'NATIONAL SERVICE TRAINING PROGRAM 3', '-', 4.5, 1.5, 'NSTP200', '', ''],
+      'CSS130': [1, 4, 'CSS130', 'DATA STRUCTURES AND ALGORITHMS', 4.5, '-', 3, 'CSS122, CSS122L', '', ''],
+      'FW04-1': [1, 4, 'FW04-1', 'PHYSICAL ACTIVITIES TOWARD HEALTH AND FITNESS 4 (PATHFIT 4): GROUP EXERCISE', 3, '-', 2, 'FW01-1, FW02-1, FW03-1', '', ''],
+      'GED105': [1, 4, 'GED105', 'THE CONTEMPORARY WORLD', 4.5, '-', 3, '', '', ''],
+      'GED110': [1, 4, 'GED110', 'PEOPLE AND EARTH S ECOSYSTEM', 4.5, '-', 3, '', '', ''],
+      'ITS150': [1, 4, 'ITS150', 'OPERATING SYSTEMS', 3, '-', 2, 'ITS121, ITS121L', '', ''],
+      'ITS150L': [1, 4, 'ITS150L', 'OPERATING SYSTEMS LABORATORY', '-', 4.5, 1, 'ITS121, ITS121L', 'ITS150', ''],
+      'ITS161L': [1, 4, 'ITS161L', 'FUNDAMENTALS OF COMPUTER NETWORK 1', '-', 4.5, 1, 'CSS121, CSS121L', '', ''],
+      'NSTP400': [1, 4, 'NSTP400', 'NATIONAL SERVICE TRAINING PROGRAM 4', '-', 4.5, 1.5, 'NSTP300', '', ''],
+      'CSS123': [2, 1, 'CSS123', 'OBJECT-ORIENTED PROGRAMMING', 3, '-', 2, 'ITS131, ITS131L', '', ''],
+      'CSS123L': [2, 1, 'CSS123L', 'OBJECT-ORIENTED PROGRAMMING LABORATORY', '-', 4.5, 1, 'ITS131, ITS131L', 'CSS123', ''],
+      'CSS131': [2, 1, 'CSS131', 'DISCRETE MATHEMATICS 1', 4.5, '-', 3, 'CSS121, CSS121L', '', ''],
+      'CSS140': [2, 1, 'CSS140', 'ARTIFICIAL INTELLIGENCE', 4.5, '-', 3, 'CSS130', '', ''],
+      'ITS162L': [2, 1, 'ITS162L', 'FUNDAMENTALS OF COMPUTER NETWORK 2', '-', 9, 2, 'ITS161L', '', ''],
+      'MATH154-1': [2, 1, 'MATH154-1', 'QUANTITATIVE METHODS', 4.5, '-', 3, '', '', ''],
+      'CSS124': [2, 2, 'CSS124', 'EVENT-DRIVEN/GUI PROGRAMMING', 3, '-', 2, 'CSS123, CSS123L', '', ''],
+      'CSS124L': [2, 2, 'CSS124L', 'EVENT-DRIVEN/GUI PROGRAMMING LABORATORY', '-', 4.5, 1, 'CSS123, CSS123L', 'CSS124', ''],
+      'CSS145': [2, 2, 'CSS145', 'INTRODUCTION TO DATA SCIENCE', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
+      'GED109': [2, 2, 'GED109', 'GENDER AND SOCIETY', 4.5, '-', 3, '', '', ''],
+      'ITS122': [2, 2, 'ITS122', 'WEB SYSTEMS AND TECHNOLOGIES 2', 3, '-', 2, 'ITS121L, ITS131, ITS131L', '', ''],
+      'ITS122L': [2, 2, 'ITS122L', 'WEB SYSTEMS AND TECHNOLOGIES 2 LABORATORY', '-', 4.5, 1, 'ITS121L, ITS131, ITS131L', 'ITS122', ''],
+      'ITS163L': [2, 2, 'ITS163L', 'ADVANCED COMPUTER NETWORK 1', '-', 9, 2, 'ITS162L', '', ''],
+      'GED106': [2, 3, 'GED106', 'PURPOSIVE COMMUNICATION', 4.5, '-', 3, '', '', ''],
+      'ITS132': [2, 3, 'ITS132', 'DATA WAREHOUSING AND DATA MINING', 3, '-', 2, 'CSS145, ITS131, ITS131L', '', ''],
+      'ITS132L': [2, 3, 'ITS132L', 'DATA WAREHOUSING AND DATA MINING LABORATORY', '-', 4.5, 1, 'CSS145, ITS131, ITS131L', 'ITS132', ''],
+      'ITS141': [2, 3, 'ITS141', 'HUMAN-COMPUTER INTERACTION 1', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ITS151': [2, 3, 'ITS151', 'SYSTEMS INTEGRATION AND ARCHITECTURE 1', 3, '-', 2, 'CSS124, CSS124L, ISS120', '', ''],
+      'ITS151L': [2, 3, 'ITS151L', 'SYSTEMS INTEGRATION AND ARCHITECTURE 1 LABORATORY', '-', 4.5, 1, 'CSS124, CSS124L, ISS120', 'ITS151', ''],
+      'ITS164L': [2, 3, 'ITS164L', 'ADVANCED COMPUTER NETWORK 2', '-', 4.5, 1, 'ITS163L', '', ''],
+      'ITS165': [2, 3, 'ITS165', 'INFORMATION ASSURANCE AND SECURITY 1', 4.5, '-', 3, 'ITS131, ITS131L, ITS161L', '', ''],
+      'GED107': [2, 4, 'GED107', 'ETHICS', 4.5, '-', 3, '', '', ''],
+      'ITS142': [2, 4, 'ITS142', 'HUMAN-COMPUTER INTERACTION 2', 3, '-', 2, 'ITS141', '', ''],
+      'ITS142L': [2, 4, 'ITS142L', 'HUMAN-COMPUTER INTERACTION 2 LABORATORY', '-', 4.5, 1, 'ITS141', 'ITS142', ''],
+      'ITS152': [2, 4, 'ITS152', 'SYSTEMS INTEGRATION AND ARCHITECTURE 2', 3, '-', 2, 'ITS151, ITS151L', '', ''],
+      'ITS152L': [2, 4, 'ITS152L', 'SYSTEMS INTEGRATION AND ARCHITECTURE 2 LABORATORY', '-', 4.5, 1, 'ITS151, ITS151L', 'ITS152', ''],
+      'RZL110': [2, 4, 'RZL110', 'THE LIFE AND WORKS OF RIZAL', 4.5, '-', 3, '', '', ''],
+      'ITS109': [3, 1, 'ITS109', 'RESEARCH METHODS IN INFORMATION TECHNOLOGY', 4.5, '-', 3, 'ITS152, ITS152L', '', ''],
+      'ITS120': [3, 1, 'ITS120', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES', 3, '-', 2, 'CSS124, CSS124L', '', ''],
+      'ITS120L': [3, 1, 'ITS120L', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES LABORATORY', '-', 4.5, 1, 'CSS124, CSS124L', '', ''],
+      'ITS153': [3, 1, 'ITS153', 'SYSTEMS ADMINISTRATION AND MAINTENANCE', 3, '-', 2, 'ITS152, ITS152L, ITS164L', '', ''],
+      'ITS153L': [3, 1, 'ITS153L', 'SYSTEMS ADMINISTRATION AND MAINTENANCE LABORATORY', '-', 4.5, 1, 'ITS152, ITS152L, ITS164L', 'ITS153', ''],
+      'ITS166': [3, 1, 'ITS166', 'INFORMATION SECURITY AND ASSURANCE 2', 3, '-', 2, 'ITS165', '', ''],
+      'ITS166L': [3, 1, 'ITS166L', 'INFORMATION SECURITY AND ASSURANCE 2 LABORATORY', '-', 4.5, 1, 'ITS165', 'ITS166', ''],
+      'CSS153': [3, 2, 'CSS153', 'SOFTWARE QUALITY', 3, '-', 2, 'ITS142, ITS142L', '', ''],
+      'CSS153L': [3, 2, 'CSS153L', 'SOFTWARE QUALITY LABORATORY', '-', 4.5, 1, 'ITS142, ITS142L', 'CSS153', ''],
+      'ISS160': [3, 2, 'ISS160', 'PROJECT MANAGEMENT', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ITS105': [3, 2, 'ITS105', 'SOCIAL AND PROFESSIONAL ISSUES', 4.5, '-', 3, 'GED107, ITS141', '', ''],
+      'ITS200-1': [3, 2, 'ITS200-1', 'THESIS 1', 1.5, '-', 1, 'ITS109', '', ''],
+      'ITS199-1R': [3, 3, 'ITS199-1R', 'PRACTICUM 1', 4.5, '-', 3, 'ITS105', '', ''],
+      'ITS200-2': [3, 3, 'ITS200-2', 'THESIS 2', 4.5, '-', 1, 'ITS200-1', '', ''],
+      'ITS198F': [3, 4, 'ITS198F', 'CAREER DEVELOPMENT AND SEMINAR IN IT', '-', 4.5, 1, 'FOR GRADUATING STUDENTS ONLY', '', ''],
+      'ITS199-2R': [3, 4, 'ITS199-2R', 'PRACTICUM 2', 4.5, '-', 3, 'ITS199-1R', '', ''],
+      'ITS200-3': [3, 4, 'ITS200-3', 'THESIS 3', 4.5, '-', 1, 'ITS200-2', '', ''],
+      'SGE100X': [3, 4, 'SGE100X', 'STUDENT GLOBAL EXPERIENCE', '-', '-', '(0)', '3RD YEAR STANDING', '', ''],
+    },
+    elective: {
+      'CSS171': [3, 3, 'CSS171', 'GRAPHICS AND VISUAL COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'CSS172': [3, 3, 'CSS172', 'PATTERN RECOGNITION', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'CSS173': [3, 3, 'CSS173', 'PARALLEL AND DISTRIBUTED COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ECS176': [3, 3, 'ECS176', 'INTRODUCTION TO GAME PROGRAMMING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ISS170': [3, 3, 'ISS170', 'TECHNOPRENEURSHIP', 4.5, '-', 3, 'ITS132, ITS132L', '', ''],
+      'ISS171': [3, 3, 'ISS171', 'SUPPLY CHAIN MANAGEMENT', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
+      'ISS172': [3, 3, 'ISS172', 'CUSTOMER RELATIONS MANAGEMENT', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
+      'ISS173': [3, 3, 'ISS173', 'ESSENTIAL OF SAS', 4.5, '-', 3, 'MATH154-1', '', ''],
+      'ISS174': [3, 3, 'ISS174', 'IT AUDIT AND CONTROL', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
+      'ITS170': [3, 3, 'ITS170', 'IT INFRASTRUCTURE LIBRARY FOUNDATION COURSE', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
+      'ITS171': [3, 3, 'ITS171', 'FUNDAMENTALS OF SAP', 4.5, '-', 3, 'ITS131, ITS131L', '', ''],
+      'ITS172': [3, 3, 'ITS172', 'MOBILE APPLICATION DEVELOPMENT', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ITS173': [3, 3, 'ITS173', 'EMBEDDED SYSTEMS', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ITS174': [3, 3, 'ITS174', 'INTERNET OF THINGS', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+      'ITS175': [3, 3, 'ITS175', 'CLOUD COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+    },
   },
 };
 const courseStatus = {
@@ -128,18 +130,18 @@ const courseStatus = {
       NSTP300: 'taken',
   
       CSS130: 'taken',
-      'FW04-1': 'notTaken',
+      'FW04-1': 'inLoad',
       GED105: 'taken',
-      GED110: 'notTaken',
-      ITS150: 'notTaken',
-      ITS150L: 'notTaken',
-      ITS161L: 'notTaken',
+      GED110: 'inLoad',
+      ITS150: 'inLoad',
+      ITS150L: 'inLoad',
+      ITS161L: 'inLoad',
       NSTP400: 'taken',
       
       // 2nd Year
       CSS123: 'taken',
       CSS123L: 'taken',
-      CSS131: 'notTaken',
+      CSS131: 'inLoad',
       CSS140: 'notTaken',
       ITS162L: 'notTaken',
       'MATH154-1': 'taken',
@@ -152,7 +154,7 @@ const courseStatus = {
       ITS122L: 'notTaken',
       ITS163L: 'notTaken',
   
-      GED106: 'notTaken',
+      GED106: 'inLoad',
       ITS132: 'notTaken',
       ITS132L: 'notTaken',
       ITS141: 'notTaken',
@@ -166,7 +168,7 @@ const courseStatus = {
       ITS142L: 'notTaken',
       ITS152: 'notTaken',
       ITS152L: 'notTaken',
-      RZL110: 'notTaken',
+      RZL110: 'inLoad',
   
       // 3rd Year
       ITS109: 'notTaken',
@@ -242,16 +244,16 @@ const courseStatus = {
       CSS130: 'taken',
       'FW04-1': 'taken',
       GED105: 'taken',
-      GED110: 'notTaken',
-      ITS150: 'notTaken',
-      ITS150L: 'notTaken',
+      GED110: 'inLoad',
+      ITS150: 'inLoad',
+      ITS150L: 'inLoad',
       ITS161L: 'taken',
       NSTP400: 'taken',
       
       // 2nd Year
       CSS123: 'taken',
       CSS123L: 'taken',
-      CSS131: 'notTaken',
+      CSS131: 'inLoad',
       CSS140: 'taken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
@@ -259,10 +261,10 @@ const courseStatus = {
       CSS124: 'notTaken',
       CSS124L: 'notTaken',
       CSS145: 'taken',
-      GED109: 'notTaken',
+      GED109: 'inLoad',
       ITS122: 'notTaken',
       ITS122L: 'notTaken',
-      ITS163L: 'notTaken',
+      ITS163L: 'inLoad',
   
       GED106: 'notTaken',
       ITS132: 'notTaken',
@@ -351,12 +353,12 @@ const courseStatus = {
       ITS131L: 'taken',
       NSTP300: 'taken',
   
-      CSS130: 'notTaken',
-      'FW04-1': 'notTaken',
+      CSS130: 'inLoad',
+      'FW04-1': 'inLoad',
       GED105: 'taken',
       GED110: 'taken',
-      ITS150: 'notTaken',
-      ITS150L: 'notTaken',
+      ITS150: 'inLoad',
+      ITS150L: 'inLoad',
       ITS161L: 'taken',
       NSTP400: 'taken',
       
@@ -374,7 +376,7 @@ const courseStatus = {
       GED109: 'taken',
       ITS122: 'notTaken',
       ITS122L: 'notTaken',
-      ITS163L: 'notTaken',
+      ITS163L: 'inLoad',
   
       GED106: 'taken',
       ITS132: 'notTaken',
@@ -467,8 +469,8 @@ const courseStatus = {
       'FW04-1': 'taken',
       GED105: 'taken',
       GED110: 'taken',
-      ITS150: 'notTaken',
-      ITS150L: 'notTaken',
+      ITS150: 'inLoad',
+      ITS150L: 'inLoad',
       ITS161L: 'taken',
       NSTP400: 'taken',
       
@@ -486,7 +488,7 @@ const courseStatus = {
       GED109: 'taken',
       ITS122: 'taken',
       ITS122L: 'taken',
-      ITS163L: 'notTaken',
+      ITS163L: 'inLoad',
   
       GED106: 'taken',
       ITS132: 'taken',
@@ -498,10 +500,10 @@ const courseStatus = {
       ITS165: 'taken',
   
       GED107: 'taken',
-      ITS142: 'notTaken',
-      ITS142L: 'notTaken',
-      ITS152: 'notTaken',
-      ITS152L: 'notTaken',
+      ITS142: 'inLoad',
+      ITS142L: 'inLoad',
+      ITS152: 'inLoad',
+      ITS152L: 'inLoad',
       RZL110: 'taken',
   
       // 3rd Year
@@ -585,7 +587,7 @@ const studentInfo = {
   },
 }
 
-function generatecoreiculum(core){
+function generatecorecurriculum(core){
   const maxYear = () => {
     var year = 0;
 
@@ -615,17 +617,12 @@ function generatecoreiculum(core){
       }
 
       for(term = 1; term <= maxTerm(year); term++){
-        let totalLecHrs = 0;
-        let totalLabHrs = 0;
-        let totalUnits = 0;
-
         content +=
+        `<p>Term ${term}</p>` +
         '<div class="table-cont">' +
           '<table>' + 
             '<thead>' +
               '<tr>' +
-                '<th>Yr</th>' +
-                '<th>Term</th>' +
                 '<th>Course Code</th>' +
                 '<th>Course Title</th>' +
                 '<th>Lec Hrs</th>' +
@@ -640,18 +637,9 @@ function generatecoreiculum(core){
         Object.keys(core).forEach((course) => {
           const courseInfo = core[course];
 
-          if(courseInfo[0] === year && courseInfo[1] === term){
-            if(!(courseInfo[4] == '-'))
-              totalLecHrs += (Number(courseInfo[4])) ? courseInfo[4] : 0;
-            if(!(courseInfo[5] == '-'))
-              totalLabHrs += (Number(courseInfo[5])) ? courseInfo[5] : 0;
-            if(!(courseInfo[6] == '-'))
-              totalUnits += (Number(courseInfo[6])) ? courseInfo[6] : 0;
-            
+          if(courseInfo[0] === year && courseInfo[1] === term)
             content +=
               `<tr>` +
-                `<td>${courseInfo[0]}</td>` +
-                `<td>${courseInfo[1]}</td>` +
                 `<td style="text-align: left;">${courseInfo[2]}</td>` +
                 `<td style="text-align: left;">${courseInfo[3]}</td>` +
                 `<td>${courseInfo[4]}</td>` +
@@ -661,22 +649,8 @@ function generatecoreiculum(core){
                 `<td style="text-align: left;">${courseInfo[8]}</td>` +
                 `<td style="text-align: left;">${courseInfo[9]}</td>` +
               '</tr>';
-          }
         });
-        content +=
-          '<tr>' +
-            '<td></td>' +
-            '<td></td>' +
-            '<td></td>' +
-            '<td>total</td>' +
-            `<td>${totalLecHrs}</td>` +
-            `<td>${totalLabHrs}</td>` +
-            `<td>${totalUnits}</td>` +
-            '<td></td>' +
-            '<td></td>' +
-            '<td></td>' +
-          '</tr>' +
-          '</tbody></table></div>';
+        content += '</tbody></table></div>';
       }
     }
     else
@@ -691,14 +665,12 @@ function generateElectivesCurriculum(elec){
   var content = '';
 	
   if(elec){
-    let totalLecHrs = 0;
-    let totalLabHrs = 0;
-    let totalUnits = 0;
-    content += '<div class="table-cont"><table>' + 
+    content += 
+    `<p>Year 3 Term 3</p>` +
+    '<div class="table-cont">' +
+    '<table>' + 
       '<thead>' +
         '<tr>' +
-          '<th>Yr</th>' +
-          '<th>Term</th>' +
           '<th>Course Code</th>' +
           '<th>Course Title</th>' +
           '<th>Lec Hrs</th>' +
@@ -710,21 +682,11 @@ function generateElectivesCurriculum(elec){
         '</tr>' +
       '</thead>' +
       '<tbody>';
-
     Object.keys(elec).forEach((course) => {
       const courseInfo = elec[course];
-      
-      if(!(courseInfo[4] == '-'))
-        totalLecHrs += (Number(courseInfo[4])) ? courseInfo[4] : 0;
-      if(!(courseInfo[5] == '-'))
-        totalLabHrs += (Number(courseInfo[5])) ? courseInfo[5] : 0;
-      if(!(courseInfo[6] == '-'))
-        totalUnits += (Number(courseInfo[6])) ? courseInfo[6] : 0;
 
       content +=
         '<tr>' +
-          `<td>${courseInfo[0]}</td>` +
-          `<td>${courseInfo[1]}</td>` +
           `<td style="text-align: left;">${courseInfo[2]}</td>` +
           `<td style="text-align: left;">${courseInfo[3]}</td>` +
           `<td>${courseInfo[4]}</td>` +
@@ -735,20 +697,7 @@ function generateElectivesCurriculum(elec){
           `<td style="text-align: left;">${courseInfo[9]}</td>` +
         '</tr>';
     });
-    content +=
-    '<tr>' +
-      '<td></td>' +
-      '<td></td>' +
-      '<td></td>' +
-      '<td>total</td>' +
-      `<td>${totalLecHrs}</td>` +
-      `<td>${totalLabHrs}</td>` +
-      `<td>${totalUnits}</td>` +
-      '<td></td>' +
-      '<td></td>' +
-      '<td></td>' +
-    '</tr>' +
-    '</tbody></table></div>';
+    content += '</tbody></table></div>';
   }
   else
     content = '<p class="no-course">There are no Electives for this program.</p>';
@@ -758,15 +707,12 @@ function generateElectivesCurriculum(elec){
 
 Object.keys(studentInfo).forEach((student, i) => {
   const currentStudent = studentInfo[student];
-  var core = null;
-  var elective = null;
-  
-  if(currentStudent.program === 'IT'){
-    core = ITCurr.core;
-    elective = ITCurr.elective;
-  }
+  const program = currentStudent.program;
+  const curr = programCurriculum[program];
+  const core = curr ? curr.core : null;
+  const elective = curr ? curr.elective : null;
 
-  if(studentInfo[student].defaultYear !== 3)
+  if(currentStudent.defaultYear !== 3)
     courseStatus[student].core.SGE100X = 'preReq';
 
   document.querySelector('[data-mainNav]').innerHTML +=
@@ -778,12 +724,12 @@ Object.keys(studentInfo).forEach((student, i) => {
     `<div class="gen-info">` +
       `<div class="student-name">` +
         `<h1>${currentStudent.displayName} Curriculum</h1>` +
-        `<img src="./assets/image/pen-to-square.svg" alt="edit" onclick="openEditModal('${student}')">` +
+        `<img src="./assets/image/pen-to-square.svg" alt="edit" onclick="openEditModal('${student}', '${program}')">` +
       `</div>` +
       `<div class="infos">` +
         `<ul class="basic-info">` +
           `<li>` +
-            `<p>Program: <b>${currentStudent.program}</b></p>` +
+            `<p>Program: <b>${program}</b></p>` +
           `</li>` +
           `<li>` +
             `<p>Year Level: <b>${currentStudent.defaultYear}</b></p>` +
@@ -827,12 +773,16 @@ Object.keys(studentInfo).forEach((student, i) => {
         `<div class="legend">` +
           `<p>Legend:</p>` +
           `<div>` +
+            `<div class="inLoad"></div>` +
+            `<p>in Load</p>` +
+          `</div>` +
+          `<div>` +
             `<div class="taken"></div>` +
             `<p>Taken</p>` +
           `</div>` +
           `<div>` +
             `<div class="notTaken"></div>` +
-            `<p>NotYetTaken</p>` +
+            `<p>Not Taken</p>` +
           `</div>` +
           `<div>` +
             `<div class="preReq"></div>` +
@@ -850,7 +800,7 @@ Object.keys(studentInfo).forEach((student, i) => {
             `<span>4th</span>` +
             `<span>5th</span>` +
           `</div>` +
-          `<div class="curr-tables">${generatecoreiculum(core)}</div>` +
+          `<div class="curr-tables">${generatecorecurriculum(core)}</div>` +
         `</article>` +
         `<article id="Electives">` +
           `<span>` +
@@ -874,13 +824,13 @@ Object.keys(studentInfo).forEach((student, i) => {
   `</section>`;
 });
 
-function getIntVal(val){
-  var newval = null;
+// function getIntVal(val){
+//   var newval = null;
 
-  if(typeof val === 'number')
-    newval = val;
-  return newval;
-}
+//   if(typeof val === 'number')
+//     newval = val;
+//   return newval;
+// }
 
 // var itCurrTableSQL = "INSERT INTO `it curriculum` (`curriculumType`,`Year`, `Term`, `Course Code`, `Course Title`, `Lec Hrs`, `Lab Hrs`, `Credit Units`, `Pre-Requisites`, `Co-Requisites`, `Paired Courses`)\nVALUES\n";
 // Object.keys(ITCurr).forEach((currType, i) => {
@@ -901,7 +851,7 @@ function getIntVal(val){
 //   Object.keys(curriculumTypes).forEach((curriculumType) => {
 //     const courses = curriculumTypes[curriculumType]
 //     Object.keys(courses).forEach((course) => {
-//       if(name === 'Nikkos Dantes')
+//       if(name === 'Mark Artista')
 //         coreStatusTableSQL += `("${name}", "${curriculumType}", "${course}", "${courses[course]}"),\n`;
 //     })
 //   });

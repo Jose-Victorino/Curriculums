@@ -1,6 +1,9 @@
-const mainTabs = document.querySelectorAll('[data-mainNavTab]');
-const mainWindows = document.querySelectorAll('[data-mainTabWindow]');
-const stdCurrs = Array.from(document.querySelector('.student-currs').children);
+const main = document.querySelector('main');
+const navBrg = document.querySelector('.Nav-Burger');
+const nav = main.querySelector('nav');
+const mainTabs = main.querySelectorAll('[data-mainNavTab]');
+const mainWindows = main.querySelectorAll('[data-mainTabWindow]');
+const stdCurrs = Array.from(main.querySelector('.student-currs').children);
 
 mainTabs.forEach((tab) => {
 	tab.addEventListener('click', () => {
@@ -52,8 +55,8 @@ function windowTabBtn(tabs, windows){
   });
 }
 function courseTabReset(){
-	const navTabs = document.querySelectorAll('.tab-nav');
-	const currList = document.querySelectorAll('.curriculum-lists');
+	const navTabs = main.querySelectorAll('.tab-nav');
+	const currList = main.querySelectorAll('.curriculum-lists');
 
 	for(let i = 0; i < 3; i++){
 		const li = navTabs[i].querySelector('ul').children;
@@ -77,10 +80,13 @@ window.onload = () =>{
 	defaultYearReset();
 }
 
-const nav = document.querySelector('nav');
-const navBrg = document.querySelector('.Nav-Burger');
+main.addEventListener('click', e => {
+	if(!navBrg.classList.contains('on')) return;
+	if(!e.target.closest('nav')) collapseNav()
+})
+navBrg.addEventListener('click', () => collapseNav())
 
-navBrg.addEventListener('click', () => {
+function collapseNav(){
 	navBrg.classList.toggle('on');
 	nav.classList.toggle('show');
-});
+}

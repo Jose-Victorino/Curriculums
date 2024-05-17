@@ -64,16 +64,13 @@ function computeGrade(){
     document.getElementById('moduleGrade').value = moduleGrade;
   }
 }
-
 function clearGradeInputs(){
   const inputs = form.querySelectorAll('input');
 
   inputs.forEach((input) => {
     input.value = null;
   });
-  
 }
-
 function addRow(){
   tbody.innerHTML +=
   '<tr>' +
@@ -83,18 +80,7 @@ function addRow(){
     '<td><input type="number" class="req" min="1" max="100"></td>' +
   '</tr>';
 }
-
 function toggleGradeInfo(){
   modal.classList.toggle('show');
   modal.querySelector('.grade-info-modal').classList.toggle('show');
-}
-
-function closeModal(){
-  const articles = modal.querySelectorAll('article');
-  modal.classList.toggle('show');
-
-  articles.forEach((article) => {
-    if(article.classList.contains('show'))
-      article.classList.toggle('show')
-  })
 }
