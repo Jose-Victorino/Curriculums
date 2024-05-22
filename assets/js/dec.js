@@ -365,7 +365,7 @@ const courseStatus = {
       // 2nd Year
       CSS123: 'notTaken',
       CSS123L: 'notTaken',
-      CSS131: 'notTaken',
+      CSS131: 'inLoad',
       CSS140: 'notTaken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
@@ -640,14 +640,14 @@ function generatecorecurriculum(core){
           if(courseInfo[0] === year && courseInfo[1] === term)
             content +=
               `<tr>` +
-                `<td style="text-align: left;">${courseInfo[2]}</td>` +
-                `<td style="text-align: left;">${courseInfo[3]}</td>` +
+                `<td>${courseInfo[2]}</td>` +
+                `<td>${courseInfo[3]}</td>` +
                 `<td>${courseInfo[4]}</td>` +
                 `<td>${courseInfo[5]}</td>` +
                 `<td>${courseInfo[6]}</td>` +
-                `<td style="text-align: left;">${courseInfo[7]}</td>` +
-                `<td style="text-align: left;">${courseInfo[8]}</td>` +
-                `<td style="text-align: left;">${courseInfo[9]}</td>` +
+                `<td>${courseInfo[7]}</td>` +
+                `<td>${courseInfo[8]}</td>` +
+                `<td>${courseInfo[9]}</td>` +
               '</tr>';
         });
         content += '</tbody></table></div>';
@@ -687,14 +687,14 @@ function generateElectivesCurriculum(elec){
 
       content +=
         '<tr>' +
-          `<td style="text-align: left;">${courseInfo[2]}</td>` +
-          `<td style="text-align: left;">${courseInfo[3]}</td>` +
+          `<td>${courseInfo[2]}</td>` +
+          `<td>${courseInfo[3]}</td>` +
           `<td>${courseInfo[4]}</td>` +
           `<td>${courseInfo[5]}</td>` +
           `<td>${courseInfo[6]}</td>` +
-          `<td style="text-align: left;">${courseInfo[7]}</td>` +
-          `<td style="text-align: left;">${courseInfo[8]}</td>` +
-          `<td style="text-align: left;">${courseInfo[9]}</td>` +
+          `<td>${courseInfo[7]}</td>` +
+          `<td>${courseInfo[8]}</td>` +
+          `<td>${courseInfo[9]}</td>` +
         '</tr>';
     });
     content += '</tbody></table></div>';
@@ -724,7 +724,7 @@ Object.keys(studentInfo).forEach((student, i) => {
     `<div class="gen-info">` +
       `<div class="student-name">` +
         `<h1>${currentStudent.displayName} Curriculum</h1>` +
-        `<img src="./assets/image/pen-to-square.svg" alt="edit" onclick="openEditModal('${student}', '${program}')">` +
+        `<img src="./assets/image/svg/pen-to-square.svg" alt="edit" onclick="openEditModal('${student}', '${program}')">` +
       `</div>` +
       `<div class="infos">` +
         `<ul class="basic-info">` +

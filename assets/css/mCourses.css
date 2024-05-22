@@ -11,13 +11,14 @@
 .mutual-courses ul{ 
   /* display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  /*Masonry layout*/
-  columns: 300px;
+
+  column-count: 4;
   gap: 20px;
 }
 .mutual-courses li{
-  page-break-inside: avoid; /*Masonry layout*/
-  margin-bottom: 20px; /*Masonry layout*/
+  page-break-inside: avoid;
+  margin-bottom: 20px;
+
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -66,13 +67,13 @@
 
 }
 @media(max-width: 1250px){
-
+  .mutual-courses ul{ column-count: 3; }
 }
 @media(max-width: 940px){
-  
+  .mutual-courses ul{ column-count: 2; }
 }
 @media(max-width: 740px){
-  
+  .mutual-courses ul{ column-count: 1; }
 }
 @media(max-width: 560px){
 
