@@ -98,6 +98,12 @@ const programCurriculum = {
     },
   },
 };
+const specialization = {
+  'Computer Network and Security': '',
+  'Cybersecurity': '',
+  'Application Development': '',
+  'Enterprise Data Management': '',
+};
 const courseStatus = {
 	'Jose Victorino': {
     core: {

@@ -50,7 +50,7 @@ function generateMutualCourses(){
           courseInfo.classList.remove('notTaken');
         if(curriculumType === 'core')
           coreTakenSum += (Number(units)) ? Number(units) : 0;
-        if(curriculumType === 'elec')
+        if(curriculumType === 'elective')
           elecTakenSum += (Number(units)) ? Number(units) : 0;
       }
       courseInfo.classList.add(courses[courseCode]);
