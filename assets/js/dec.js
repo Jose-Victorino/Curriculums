@@ -60,24 +60,24 @@ const programCurriculum = {
       'ITS152': [2, 4, 'ITS152', 'SYSTEMS INTEGRATION AND ARCHITECTURE 2', 3, '-', 2, 'ITS151, ITS151L', '', ''],
       'ITS152L': [2, 4, 'ITS152L', 'SYSTEMS INTEGRATION AND ARCHITECTURE 2 LABORATORY', '-', 4.5, 1, 'ITS151, ITS151L', 'ITS152', ''],
       'RZL110': [2, 4, 'RZL110', 'THE LIFE AND WORKS OF RIZAL', 4.5, '-', 3, '', '', ''],
+      'ITS105': [3, 1, 'ITS105', 'SOCIAL AND PROFESSIONAL ISSUES', 4.5, '-', 3, 'GED107, ITS141', '', ''],
       'ITS109': [3, 1, 'ITS109', 'RESEARCH METHODS IN INFORMATION TECHNOLOGY', 4.5, '-', 3, 'ITS152, ITS152L', '', ''],
-      'ITS120': [3, 1, 'ITS120', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES', 3, '-', 2, 'CSS124, CSS124L', '', ''],
-      'ITS120L': [3, 1, 'ITS120L', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES LABORATORY', '-', 4.5, 1, 'CSS124, CSS124L', '', ''],
+      'ITS120': [3, 1, 'ITS120', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES', 3, '-', 2, 'CSS123, CSS123L', '', ''],
+      'ITS120L': [3, 1, 'ITS120L', 'APPLICATION DEVELOPMENT AND EMERGING TECHNOLOGIES LABORATORY', '-', 4.5, 1, 'CSS123, CSS123L', '', ''],
       'ITS153': [3, 1, 'ITS153', 'SYSTEMS ADMINISTRATION AND MAINTENANCE', 3, '-', 2, 'ITS152, ITS152L, ITS164L', '', ''],
       'ITS153L': [3, 1, 'ITS153L', 'SYSTEMS ADMINISTRATION AND MAINTENANCE LABORATORY', '-', 4.5, 1, 'ITS152, ITS152L, ITS164L', 'ITS153', ''],
       'ITS166': [3, 1, 'ITS166', 'INFORMATION SECURITY AND ASSURANCE 2', 3, '-', 2, 'ITS165', '', ''],
       'ITS166L': [3, 1, 'ITS166L', 'INFORMATION SECURITY AND ASSURANCE 2 LABORATORY', '-', 4.5, 1, 'ITS165', 'ITS166', ''],
-      'CSS153': [3, 2, 'CSS153', 'SOFTWARE QUALITY', 3, '-', 2, 'ITS142, ITS142L', '', ''],
-      'CSS153L': [3, 2, 'CSS153L', 'SOFTWARE QUALITY LABORATORY', '-', 4.5, 1, 'ITS142, ITS142L', 'CSS153', ''],
-      'ISS160': [3, 2, 'ISS160', 'PROJECT MANAGEMENT', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
-      'ITS105': [3, 2, 'ITS105', 'SOCIAL AND PROFESSIONAL ISSUES', 4.5, '-', 3, 'GED107, ITS141', '', ''],
-      'ITS200-1': [3, 2, 'ITS200-1', 'THESIS 1', 1.5, '-', 1, 'ITS109', '', ''],
-      'ITS199-1R': [3, 3, 'ITS199-1R', 'PRACTICUM 1', 4.5, '-', 3, 'ITS105', '', ''],
+      'CSS153': [3, 2, 'CSS153', 'SOFTWARE QUALITY', 3, '-', 2, '', '', ''],
+      'CSS153L': [3, 2, 'CSS153L', 'SOFTWARE QUALITY LABORATORY', '-', 4.5, 1, '', 'CSS153', ''],
+      'ISS160': [3, 2, 'ISS160', 'PROJECT MANAGEMENT', 4.5, '-', 3, '', '', ''],
+      'ITS200-1': [3, 2, 'ITS200-1', 'THESIS 1', 1.5, '-', 1, '', '', ''],
+      'ITS198F': [3, 3, 'ITS198F', 'CAREER DEVELOPMENT AND SEMINAR IN IT', '-', 4.5, 1, 'FOR GRADUATING STUDENTS ONLY', '', ''],
+      'ITS199-1R': [3, 3, 'ITS199-1R', 'PRACTICUM 1', 4.5, '-', 3, '', '', ''],
+      'ITS199-2R': [3, 3, 'ITS199-2R', 'PRACTICUM 2', 4.5, '-', 3, '', '', ''],
       'ITS200-2': [3, 3, 'ITS200-2', 'THESIS 2', 4.5, '-', 1, 'ITS200-1', '', ''],
-      'ITS198F': [3, 4, 'ITS198F', 'CAREER DEVELOPMENT AND SEMINAR IN IT', '-', 4.5, 1, 'FOR GRADUATING STUDENTS ONLY', '', ''],
-      'ITS199-2R': [3, 4, 'ITS199-2R', 'PRACTICUM 2', 4.5, '-', 3, 'ITS199-1R', '', ''],
-      'ITS200-3': [3, 4, 'ITS200-3', 'THESIS 3', 4.5, '-', 1, 'ITS200-2', '', ''],
-      'SGE100X': [3, 4, 'SGE100X', 'STUDENT GLOBAL EXPERIENCE', '-', '-', '(0)', '3RD YEAR STANDING', '', ''],
+      'ITS200-3': [3, 3, 'ITS200-3', 'THESIS 3', 4.5, '-', 1, '', '', ''],
+      'SGE100X': [3, 3, 'SGE100X', 'STUDENT GLOBAL EXPERIENCE', '-', '-', '(0)', '3RD YEAR STANDING', '', ''],
     },
     elective: {
       'CSS171': [3, 3, 'CSS171', 'GRAPHICS AND VISUAL COMPUTING', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
@@ -136,18 +136,18 @@ const courseStatus = {
       NSTP300: 'taken',
   
       CSS130: 'taken',
-      'FW04-1': 'inLoad',
+      'FW04-1': 'taken',
       GED105: 'taken',
-      GED110: 'inLoad',
-      ITS150: 'inLoad',
-      ITS150L: 'inLoad',
-      ITS161L: 'inLoad',
+      GED110: 'taken',
+      ITS150: 'taken',
+      ITS150L: 'taken',
+      ITS161L: 'taken',
       NSTP400: 'taken',
       
       // 2nd Year
       CSS123: 'taken',
       CSS123L: 'taken',
-      CSS131: 'inLoad',
+      CSS131: 'taken',
       CSS140: 'notTaken',
       ITS162L: 'notTaken',
       'MATH154-1': 'taken',
@@ -160,7 +160,7 @@ const courseStatus = {
       ITS122L: 'notTaken',
       ITS163L: 'notTaken',
   
-      GED106: 'inLoad',
+      GED106: 'taken',
       ITS132: 'notTaken',
       ITS132L: 'notTaken',
       ITS141: 'notTaken',
@@ -174,7 +174,7 @@ const courseStatus = {
       ITS142L: 'notTaken',
       ITS152: 'notTaken',
       ITS152L: 'notTaken',
-      RZL110: 'inLoad',
+      RZL110: 'taken',
   
       // 3rd Year
       ITS109: 'notTaken',
@@ -250,16 +250,16 @@ const courseStatus = {
       CSS130: 'taken',
       'FW04-1': 'taken',
       GED105: 'taken',
-      GED110: 'inLoad',
-      ITS150: 'inLoad',
-      ITS150L: 'inLoad',
+      GED110: 'taken',
+      ITS150: 'taken',
+      ITS150L: 'taken',
       ITS161L: 'taken',
       NSTP400: 'taken',
       
       // 2nd Year
       CSS123: 'taken',
       CSS123L: 'taken',
-      CSS131: 'inLoad',
+      CSS131: 'taken',
       CSS140: 'taken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
@@ -267,10 +267,10 @@ const courseStatus = {
       CSS124: 'notTaken',
       CSS124L: 'notTaken',
       CSS145: 'taken',
-      GED109: 'inLoad',
+      GED109: 'taken',
       ITS122: 'notTaken',
       ITS122L: 'notTaken',
-      ITS163L: 'inLoad',
+      ITS163L: 'taken',
   
       GED106: 'notTaken',
       ITS132: 'notTaken',
@@ -359,19 +359,19 @@ const courseStatus = {
       ITS131L: 'taken',
       NSTP300: 'taken',
   
-      CSS130: 'inLoad',
-      'FW04-1': 'inLoad',
+      CSS130: 'taken',
+      'FW04-1': 'taken',
       GED105: 'taken',
       GED110: 'taken',
-      ITS150: 'inLoad',
-      ITS150L: 'inLoad',
+      ITS150: 'taken',
+      ITS150L: 'taken',
       ITS161L: 'taken',
       NSTP400: 'taken',
       
       // 2nd Year
       CSS123: 'notTaken',
       CSS123L: 'notTaken',
-      CSS131: 'inLoad',
+      CSS131: 'taken',
       CSS140: 'notTaken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
@@ -382,7 +382,7 @@ const courseStatus = {
       GED109: 'taken',
       ITS122: 'notTaken',
       ITS122L: 'notTaken',
-      ITS163L: 'inLoad',
+      ITS163L: 'taken',
   
       GED106: 'taken',
       ITS132: 'notTaken',
@@ -475,8 +475,8 @@ const courseStatus = {
       'FW04-1': 'taken',
       GED105: 'taken',
       GED110: 'taken',
-      ITS150: 'inLoad',
-      ITS150L: 'inLoad',
+      ITS150: 'taken',
+      ITS150L: 'taken',
       ITS161L: 'taken',
       NSTP400: 'taken',
       
@@ -494,7 +494,7 @@ const courseStatus = {
       GED109: 'taken',
       ITS122: 'taken',
       ITS122L: 'taken',
-      ITS163L: 'inLoad',
+      ITS163L: 'taken',
   
       GED106: 'taken',
       ITS132: 'taken',
@@ -506,10 +506,10 @@ const courseStatus = {
       ITS165: 'taken',
   
       GED107: 'taken',
-      ITS142: 'inLoad',
-      ITS142L: 'inLoad',
-      ITS152: 'inLoad',
-      ITS152L: 'inLoad',
+      ITS142: 'taken',
+      ITS142L: 'taken',
+      ITS152: 'taken',
+      ITS152L: 'taken',
       RZL110: 'taken',
   
       // 3rd Year
@@ -585,7 +585,7 @@ const studentInfo = {
   'Mark Artista': {
     displayName: "Mark's",
     program: 'IT',
-    defaultYear: 2,
+    defaultYear: 3,
     curriculumYear: 2022,
     specialization: 'Unassigned',
     unitsRequired: 171,
@@ -593,16 +593,17 @@ const studentInfo = {
   },
 }
 
-function generatecorecurriculum(core){
+function generateCoreCurriculum(core){
   const maxYear = () => {
     var year = 0;
 
-    if(core)
-      Object.keys(core).forEach((course) => {
+    if(core){
+      for(const course in core){
         const courseInfo = core[course];
         if(year < courseInfo[0])
           year = courseInfo[0];
-      });
+      }
+    }
     return year;
   }
 
@@ -613,54 +614,77 @@ function generatecorecurriculum(core){
     if(year <= maxYear()){
       const maxTerm = (year) => {
         var term = 1;
-    
-        Object.keys(core).forEach((course) => {
+
+        for(const course in core){
           const courseInfo = core[course];
           if(year === courseInfo[0] && term < courseInfo[1])
             term = courseInfo[1];
-        });
+        }
         return term;
       }
 
       for(term = 1; term <= maxTerm(year); term++){
+        let totalLecHrs = 0;
+        let totalLabHrs = 0;
+        let totalUnits = 0;
+        
         content +=
-        `<p>Term ${term}</p>` +
-        '<div class="table-cont">' +
-          '<table>' + 
-            '<thead>' +
-              '<tr>' +
-                '<th>Course Code</th>' +
-                '<th>Course Title</th>' +
-                '<th>Lec Hrs</th>' +
-                '<th>Lab Hrs</th>' +
-                '<th>Credit Units</th>' +
-                '<th>Pre-Requisites</th>' +
-                '<th>Co-Requisites</th>' +
-                '<th>Paired Courses</th>' +
-              '</tr>' +
-            '</thead>' +
-            '<tbody>';
-        Object.keys(core).forEach((course) => {
+        `<p>Term ${term}</p>
+        <div class="table-cont">
+          <table>
+            <thead>
+              <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Lec Hrs</th>
+                <th>Lab Hrs</th>
+                <th>Credit Units</th>
+                <th>Pre-Requisites</th>
+                <th>Co-Requisites</th>
+                <th>Paired Courses</th>
+              </tr>
+            </thead>
+            <tbody>`;
+        for(const course in core){
           const courseInfo = core[course];
+  
+          if(courseInfo[0] === year && courseInfo[1] === term){
+            if(!(courseInfo[4] === '-'))
+              totalLecHrs += (Number(courseInfo[4])) ? courseInfo[4] : 0;
+            if(!(courseInfo[5] === '-'))
+              totalLabHrs += (Number(courseInfo[5])) ? courseInfo[5] : 0;
+            if(!(courseInfo[6] === '-'))
+              totalUnits += (Number(courseInfo[6])) ? courseInfo[6] : 0;
 
-          if(courseInfo[0] === year && courseInfo[1] === term)
             content +=
-              `<tr>` +
-                `<td>${courseInfo[2]}</td>` +
-                `<td>${courseInfo[3]}</td>` +
-                `<td>${courseInfo[4]}</td>` +
-                `<td>${courseInfo[5]}</td>` +
-                `<td>${courseInfo[6]}</td>` +
-                `<td>${courseInfo[7]}</td>` +
-                `<td>${courseInfo[8]}</td>` +
-                `<td>${courseInfo[9]}</td>` +
-              '</tr>';
-        });
-        content += '</tbody></table></div>';
+              `<tr>
+                <td>${courseInfo[2]}</td>
+                <td>${courseInfo[3]}</td>
+                <td>${courseInfo[4]}</td>
+                <td>${courseInfo[5]}</td>
+                <td>${courseInfo[6]}</td>
+                <td>${courseInfo[7]}</td>
+                <td>${courseInfo[8]}</td>
+                <td>${courseInfo[9]}</td>
+              </tr>`;
+          }
+        }
+        content +=
+          `<tr>
+            <td></td>
+            <td style="text-align: center">total</td>
+            <td>${totalLecHrs}</td>
+            <td>${totalLabHrs}</td>
+            <td>${totalUnits}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          </tbody></table></div>`;
       }
     }
     else
-      content += '<p class="no-course">There are no Core Courses in this year level.</p>';
+      content += `<p class="no-course">There are no Core Courses in this year level.</p>`;
 
     content += `</div>`;
   }
@@ -671,39 +695,62 @@ function generateElectivesCurriculum(elec){
   var content = '';
 	
   if(elec){
+    let totalLecHrs = 0;
+    let totalLabHrs = 0;
+    let totalUnits = 0;
+
     content += 
-    `<p>Year 3 Term 3</p>` +
-    '<div class="table-cont">' +
-    '<table>' + 
-      '<thead>' +
-        '<tr>' +
-          '<th>Course Code</th>' +
-          '<th>Course Title</th>' +
-          '<th>Lec Hrs</th>' +
-          '<th>Lab Hrs</th>' +
-          '<th>Credit Units</th>' +
-          '<th>Pre-Requisites</th>' +
-          '<th>Co-Requisites</th>' +
-          '<th>Paired Courses</th>' +
-        '</tr>' +
-      '</thead>' +
-      '<tbody>';
-    Object.keys(elec).forEach((course) => {
+    `<p>Year 3 Term 3</p>
+    <div class="table-cont">
+    <table>
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Title</th>
+          <th>Lec Hrs</th>
+          <th>Lab Hrs</th>
+          <th>Credit Units</th>
+          <th>Pre-Requisites</th>
+          <th>Co-Requisites</th>
+          <th>Paired Courses</th>
+        </tr>
+      </thead>
+      <tbody>`;
+
+    for(const course in elec){
       const courseInfo = elec[course];
 
+      if(!(courseInfo[4] === '-'))
+        totalLecHrs += (Number(courseInfo[4])) ? courseInfo[4] : 0;
+      if(!(courseInfo[5] === '-'))
+        totalLabHrs += (Number(courseInfo[5])) ? courseInfo[5] : 0;
+      if(!(courseInfo[6] === '-'))
+        totalUnits += (Number(courseInfo[6])) ? courseInfo[6] : 0;
+  
       content +=
-        '<tr>' +
-          `<td>${courseInfo[2]}</td>` +
-          `<td>${courseInfo[3]}</td>` +
-          `<td>${courseInfo[4]}</td>` +
-          `<td>${courseInfo[5]}</td>` +
-          `<td>${courseInfo[6]}</td>` +
-          `<td>${courseInfo[7]}</td>` +
-          `<td>${courseInfo[8]}</td>` +
-          `<td>${courseInfo[9]}</td>` +
-        '</tr>';
-    });
-    content += '</tbody></table></div>';
+        `<tr>
+          <td>${courseInfo[2]}</td>
+          <td>${courseInfo[3]}</td>
+          <td>${courseInfo[4]}</td>
+          <td>${courseInfo[5]}</td>
+          <td>${courseInfo[6]}</td>
+          <td>${courseInfo[7]}</td>
+          <td>${courseInfo[8]}</td>
+          <td>${courseInfo[9]}</td>
+        </tr>`;
+    }
+    content +=
+      `<tr>
+        <td></td>
+        <td style="text-align: center">total</td>
+        <td>${totalLecHrs}</td>
+        <td>${totalLabHrs}</td>
+        <td>${totalUnits}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody></table></div>`;
   }
   else
     content = '<p class="no-course">There are no Electives for this program.</p>';
@@ -712,122 +759,121 @@ function generateElectivesCurriculum(elec){
 }
 
 Object.keys(studentInfo).forEach((student, i) => {
-  const currentStudent = studentInfo[student];
-  const program = currentStudent.program;
+  const {displayName, program, defaultYear, curriculumYear, specialization, unitsRequired, defaultUnitsPassed} = studentInfo[student];
   const curr = programCurriculum[program];
   const core = curr ? curr.core : null;
   const elective = curr ? curr.elective : null;
 
-  if(currentStudent.defaultYear !== 3)
+  if(defaultYear !== 3)
     courseStatus[student].core.SGE100X = 'preReq';
 
   document.querySelector('[data-mainNav]').innerHTML +=
-  `<li class="nav-item" data-mainNavTab="student-${i + 1}" onclick="courseTabReset(); defaultYearReset();">` +
-    `<p>${student}</p>` +
-  `</li>`;
+  `<li class="nav-item" data-mainNavTab="student-${i + 1}" onclick="courseTabReset(); defaultYearReset();">
+    <p>${student}</p>
+  </li>`;
   document.querySelector('.student-currs').innerHTML +=
-  `<section class="curr" data-mainTabWindow="student-${i + 1}">` +
-    `<div class="gen-info">` +
-      `<div class="student-name">` +
-        `<h1>${currentStudent.displayName} Curriculum</h1>` +
-        `<img src="./assets/image/svg/pen-to-square.svg" alt="edit" onclick="openEditModal('${student}', '${program}')">` +
-      `</div>` +
-      `<div class="infos">` +
-        `<ul class="basic-info">` +
-          `<li>` +
-            `<p>Program: <b>${program}</b></p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Year Level: <b>${currentStudent.defaultYear}</b></p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Curriculum Year: <b>${currentStudent.curriculumYear}</b></p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Specialization: <b>${currentStudent.specialization}</b></p>` +
-          `</li>` +
-        `</ul>` +
-        `<ul class="units">` +
-          `<li>` +
-            `<p>Required: <b>${currentStudent.unitsRequired}</b></p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Credited: <b data-unitsCredited></b></p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Passed: <b data-unitsPassed></b></p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Left: <b data-unitsLeft></b></p>` +
-          `</li>` +
-        `</ul>` +
-      `</div>` +
-    `</div>` +
-    `<div class="main-curr">` +
-      `<div class="tab-nav">` +
-        `<ul>` +
-          `<li class="selected" onclick="defaultYearReset()">` +
-            `<p>Core Courses</p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Electives</p>` +
-          `</li>` +
-          `<li>` +
-            `<p>Specialization</p>` +
-          `</li>` +
-        `</ul>` +
-        `<div class="legend">` +
-          `<p>Legend:</p>` +
-          `<div>` +
-            `<div class="inLoad"></div>` +
-            `<p>in Load</p>` +
-          `</div>` +
-          `<div>` +
-            `<div class="taken"></div>` +
-            `<p>Taken</p>` +
-          `</div>` +
-          `<div>` +
-            `<div class="notTaken"></div>` +
-            `<p>Not Taken</p>` +
-          `</div>` +
-          `<div>` +
-            `<div class="preReq"></div>` +
-            `<p>Pre-requiset Needed</p>` +
-          `</div>` +
-        `</div>` +
-      `</div>` +
-      `<div class="curriculum-lists">` +
-        `<article id="Core-Courses" class="show">` +
-          `<div class="year-taken">` +
-            `<p>Year</p>` +
-            `<span class="selected">1st</span>` +
-            `<span>2nd</span>` +
-            `<span>3rd</span>` +
-            `<span>4th</span>` +
-            `<span>5th</span>` +
-          `</div>` +
-          `<div class="curr-tables">${generatecorecurriculum(core)}</div>` +
-        `</article>` +
-        `<article id="Electives">` +
-          `<span>` +
-            `<span>` +
-              `<span>Required Units: </span><b>6</b>` +
-            `</span>` +
-            `<span>` +
-              `<span>Units Passed: </span><b data-elecUnitsPassed></b>` +
-            `</span>` +
-            `<span>` +
-              `<span>Units Left: </span><b data-elecUnitsLeft></b>` +
-            `</span>` +
-          `</span>` +
-          generateElectivesCurriculum(elective) +
-        `</article>` +
-        `<article id="Specialization">` +
-          `<p>Walang special sayo.</p>` +
-        `</article>` +
-      `</div>` +
-    `</div>` +
-  `</section>`;
+  `<section class="curr" data-mainTabWindow="student-${i + 1}">
+    <div class="gen-info">
+      <div class="student-name">
+        <h1>${displayName} Curriculum</h1>
+        <img src="./assets/image/svg/pen-to-square.svg" alt="edit" onclick="openEditModal('${student}', '${program}')">
+      </div>
+      <div class="infos">
+        <ul class="basic-info">
+          <li>
+            <p>Program: <b>${program}</b></p>
+          </li>
+          <li>
+            <p>Year Level: <b>${defaultYear}</b></p>
+          </li>
+          <li>
+            <p>Curriculum Year: <b>${curriculumYear}</b></p>
+          </li>
+          <li>
+            <p>Specialization: <b>${specialization}</b></p>
+          </li>
+        </ul>
+        <ul class="units">
+          <li>
+            <p>Required: <b>${unitsRequired}</b></p>
+          </li>
+          <li>
+            <p>Credited: <b data-unitsCredited></b></p>
+          </li>
+          <li>
+            <p>Passed: <b data-unitsPassed></b></p>
+          </li>
+          <li>
+            <p>Left: <b data-unitsLeft></b></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-curr">
+      <div class="tab-nav">
+        <ul>
+          <li class="selected" onclick="defaultYearReset()">
+            <p>Core Courses</p>
+          </li>
+          <li>
+            <p>Electives</p>
+          </li>
+          <li>
+            <p>Specialization</p>
+          </li>
+        </ul>
+        <div class="legend">
+          <p>Legend:</p>
+          <div>
+            <div class="taken"></div>
+            <p>in Load</p>
+          </div>
+          <div>
+            <div class="taken"></div>
+            <p>Taken</p>
+          </div>
+          <div>
+            <div class="notTaken"></div>
+            <p>Not Taken</p>
+          </div>
+          <div>
+            <div class="preReq"></div>
+            <p>Pre-requisite Needed</p>
+          </div>
+        </div>
+      </div>
+      <div class="curriculum-lists">
+        <article id="Core-Courses" class="show">
+          <div class="year-taken">
+            <p>Year</p>
+            <span class="selected">1st</span>
+            <span>2nd</span>
+            <span>3rd</span>
+            <span>4th</span>
+            <span>5th</span>
+          </div>
+          <div class="curr-tables">${generateCoreCurriculum(core)}</div>
+        </article>
+        <article id="Electives">
+          <span>
+            <span>
+              <span>Required Units: </span><b>6</b>
+            </span>
+            <span>
+              <span>Units Passed: </span><b data-elecUnitsPassed></b>
+            </span>
+            <span>
+              <span>Units Left: </span><b data-elecUnitsLeft></b>
+            </span>
+          </span>
+          ${generateElectivesCurriculum(elective)}
+        </article>
+        <article id="Specialization">
+          <p>Walang special sayo.</p>
+        </article>
+      </div>
+    </div>
+  </section>`;
 });
 
 // function getIntVal(val){

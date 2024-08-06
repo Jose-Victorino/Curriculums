@@ -12,7 +12,7 @@
   /* display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 
-  column-count: 4;
+  column-count: 3;
   gap: 20px;
 }
 .mutual-courses li{
@@ -67,7 +67,7 @@
 
 }
 @media(max-width: 1250px){
-  .mutual-courses ul{ column-count: 3; }
+  
 }
 @media(max-width: 940px){
   .mutual-courses ul{ column-count: 2; }

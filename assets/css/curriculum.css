@@ -157,6 +157,7 @@
   height: 100%;
   padding: 5px 4px;
 }
+.student-currs .curr .main-curr .curriculum-lists table tbody tr:last-child{ border-top: 2px solid black; }
 .student-currs .curr .main-curr .curriculum-lists table tbody td:not(:nth-of-type(n + 3):nth-of-type(-n + 5)),
 .edit-status-modal td:nth-of-type(-n + 2) label{
   text-align: left;
@@ -270,7 +271,6 @@
     top: 12px;
     width: 16px;
   }
-
 }
 @media(max-width: 740px){
   .student-currs .curr{
@@ -286,6 +286,9 @@
     width: 100%;
   }
   .student-currs .curr .main-curr .curriculum-lists table{
-    width: 610px;
+    width: 550px;
+  }
+  .curriculum-lists table thead th:nth-child(2){
+    width: 30%;
   }
 }

@@ -198,14 +198,14 @@ function updateCourseStatus(){
   };
   var hasChecked = false;
 
-  Object.keys(inputs).forEach((currType) => {
-    inputs[currType].forEach((input) => {
+  for(const currType in inputs){
+    for(const input of inputs[currType]){
       if(input.checked){
         courseStatus[savedName][currType][input.name] = 'taken';
-        hasChecked = true
+        hasChecked = true;
       }
-    });
-  });
+    }
+  }
   if(hasChecked){
     generateMutualCourses();
     mainTabs.forEach((tab, i) => {
