@@ -83,7 +83,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  padding: 0 10px;
+  padding: 0 5px;
 }
 .student-currs .curr .main-curr .tab-nav .legend > p{ font-weight: bold; }
 .student-currs .curr .main-curr .tab-nav .legend p{ font-size: 9px; }
@@ -134,7 +134,7 @@
 }
 .student-currs .curr .main-curr .curriculum-lists .curr-tables > div.show{ display: flex; }
 .curriculum-lists table{ width: 740px; }
-.curriculum-lists .curr-tables > div .table-cont{ overflow: auto; }
+.curriculum-lists .table-cont{ overflow: auto; }
 .curriculum-lists .curr-tables > div .table-cont:not(:last-child){ margin-bottom: 10px; }
 .curriculum-lists .curr-tables > div > p{ margin-bottom: 4px; } 
 .curriculum-lists table thead th:nth-child(1){ white-space: nowrap; }
@@ -226,7 +226,7 @@
 }
 
 .modals{
-  background: hsl(0, 0%, 40%, 0.5);
+  background: hsl(0, 0%, 15%, 0.6);
   display: none;
   justify-content: center;
   align-items: center;
@@ -251,12 +251,9 @@
   flex-direction: column;
   max-width: 900px;
   width: 100%;
-  height: 90vh;
+  max-height: 90vh;
   padding: 20px;
   overflow-y: auto;
-  box-shadow: 0 0 90px hsla(0, 0%, 0%, 0.35);
-  border: solid 1px #b1b1b1;
-  border-radius: 20px;
 }
 
 /* --==Responsive==-- */
@@ -279,7 +276,6 @@
   .student-currs .curr .main-curr .curriculum-lists article{
     padding: 13px;
   }
-  .student-currs .curr .legend{ margin-inline: auto; }
 }
 @media(max-width: 560px){
   .student-currs .curr .main-curr{
@@ -290,5 +286,9 @@
   }
   .curriculum-lists table thead th:nth-child(2){
     width: 30%;
+  }
+
+  .modals article{
+    padding: 10px 0 0;
   }
 }
