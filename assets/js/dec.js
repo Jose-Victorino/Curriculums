@@ -919,12 +919,10 @@ function generateCoreCurriculum(core){
           </tbody></table></div>`;
       }
     }
-    else
-      content += `<p class="no-course">There are no Core Courses in this year level.</p>`;
+    else content += `<p class="no-course">There are no Core Courses in this year level.</p>`;
 
     content += `</div>`;
   }
-
   return content;
 }
 function generateElectivesCurriculum(elec){
@@ -988,27 +986,23 @@ function generateElectivesCurriculum(elec){
       </tr>
       </tbody></table></div>`;
   }
-  else
-    content = '<p class="no-course">There are no Electives for this program.</p>';
+  else content = '<p class="no-course">There are no Electives for this program.</p>';
 
   return content;
 }
 
-Object.keys(studentInfo).forEach((student, i) => {
-  const {displayName, program, defaultYear, curriculumYear, specialization, unitsRequired, defaultUnitsPassed} = studentInfo[student];
-  const curr = programCurriculum[program];
-  const core = curr ? curr.core : null;
-  const elective = curr ? curr.elective : null;
-
+Object.entries(studentInfo).forEach(([student, {displayName, program, defaultYear, curriculumYear, specialization, unitsRequired, defaultUnitsPassed}], i) => {
+  const {core, elective} = programCurriculum[program];
+  
   if(defaultYear !== 3)
     courseStatus[student].core.SGE100X = 'preReq';
-
-  document.querySelector('[data-mainNav]').innerHTML +=
-  `<li class="nav-item" data-mainNavTab="student-${i + 1}" onclick="courseTabReset(); defaultYearReset();">
+  
+  document.querySelector('[data-mainNav]').innerHTML += `
+  <li class="nav-item" data-mainNavTab="student-${i + 1}" onclick="courseTabReset(); defaultYearReset();">
     <p>${student}</p>
   </li>`;
-  document.querySelector('.student-currs').innerHTML +=
-  `<section class="curr" data-mainTabWindow="student-${i + 1}">
+  document.querySelector('.student-currs').innerHTML += `
+  <section class="curr" data-mainTabWindow="student-${i + 1}">
     <div class="gen-info">
       <div class="student-name">
         <h1>${displayName} Curriculum</h1>
@@ -1110,4 +1104,4 @@ Object.keys(studentInfo).forEach((student, i) => {
       </div>
     </div>
   </section>`;
-});
+}); // 1113

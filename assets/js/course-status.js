@@ -57,84 +57,64 @@ function generateMutualCourses(){
     }
   });
 
-  const mergedCourses = { core: {}, elective: {} };
-  const mutualCourses = {};
-  const sortedMutualCourses = {};
+  const courseMap = new Map();
+  Object.entries(courseStatus).forEach(([studentName, {core, elective}]) => {
+    Object.entries({...core, ...elective}).forEach(([courseName, status]) => {
+      if(!['notTaken', 'inLoad'].includes(status)) return;
+      if(!courseMap.has(courseName)){
+        courseMap.set(courseName, []);
+      }
+      courseMap.get(courseName).push(studentName);
+    });
+  });
 
-  for(const student in courseStatus)
-  for(const curriculumType in courseStatus[student])
-  for(const course in courseStatus[student][curriculumType])
-  if(['notTaken', 'inLoad'].includes(courseStatus[student][curriculumType][course])){
-    if(!mergedCourses[curriculumType][course])
-      mergedCourses[curriculumType][course] = [student];
-    else
-      mergedCourses[curriculumType][course].push(student);
-  }
-
-  if(['core', 'elective'].every(curr => Object.keys(mergedCourses[curr]).length === 0)){
-    document.querySelector('.mutual-courses p').style.display = 'block';
-    return 0;
-  }
-
-  for(const curriculumType in mergedCourses)
-  for(const course in mergedCourses[curriculumType])
-  if(mergedCourses[curriculumType][course].length > 1){
-    const students = mergedCourses[curriculumType][course].sort().join('-');
-    if(!mutualCourses[students])
-      mutualCourses[students] = [course];
-    else
-      mutualCourses[students].push(course);
-  }
-
-  var line = 1;
-  var count = 0;
-  while(count < Object.keys(mutualCourses).length){
-    for(const name in mutualCourses)
-    if(name.split('').filter(char => char === '-').length === line){
-      sortedMutualCourses[name] = mutualCourses[name];
-      count++;
+  const groupedByStudents = [];
+  courseMap.forEach((students, course) => {    
+    const group = groupedByStudents.find(g => g.names.toString() === students.toString());
+    if(group){
+      group.courses.push(course);
     }
-    line++;
-  }
-  
+    else{
+      groupedByStudents.push({ names: students, courses: [course] });
+    }
+  })
+  const mutualCourses = groupedByStudents
+  .filter(({names}) => names.length > 1)
+  .sort((a, b) => a.names.length - b.names.length);
+
   ul.innerHTML = '';
-  for(const names in sortedMutualCourses){
-    const splitNames = names.split('-');
-    var content =
-    `<li>` +
-      `<div><span>${splitNames.join(', ')}</span></div>` +
-      `<hr>` +
-      `<table>` +
-        `<thead>` +
-          `<tr>` +
-            `<th>Course Code</th>` +
-            `<th>Course Title</th>` +
-          `</tr>` +
-        `</thead>` +
-        `<tbody>`;
-    for(const course in sortedMutualCourses[names]){
-      const courseCode = sortedMutualCourses[names][course];
-      const {core, elective} = programCurriculum.IT
-      var currType = '';
-      var inLoad = false;
-
-      if(core && courseCode in core)
-        currType = 'core';
-      if(elective && courseCode in elective)
-        currType = 'elective';
-      if(splitNames.every(name => courseStatus[name][currType][courseCode] === 'inLoad'))
-        inLoad = true;
-
-      content += 
-        `<tr class="${currType} ${(inLoad) ? "inLoad" : ""}">` +
-          `<td>${courseCode}</td>` +
-          `<td>${programCurriculum.IT[currType][courseCode][3]}</td>` +
-        '</tr>';
+  mutualCourses.forEach(({names, courses}) => {
+    const {core, elective} = programCurriculum.IT
+    var content = `<li><div class="names">`;
+    for(let i = 0; i < names.length; i++){
+      content += `<span>${names[i]}</span>`;
+      if(i + 1 < names.length){
+        content += ', ';
+      }
     }
+    content += `</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Title</th>
+        </tr>
+      </thead>
+      <tbody>`;
+    
+    for(const course of courses){
+      var currType = (core && course in core) ? 'core' : (elective && course in elective)? 'elective' : '';
 
+      content += `
+      <tr class="${currType} ${(names.every(name => courseStatus[name][currType][course] === 'inLoad')) ? 'inLoad' : ''}">
+        <td>${course}</td>
+        <td>${programCurriculum.IT[currType][course][3]}</td>
+      </tr>`;
+    }
+    
     content += '</tbody></table></li>';
     ul.innerHTML += content;
-  }
+  });
 }
 
 const modal = document.querySelector('.modals');
@@ -162,30 +142,30 @@ function openEditModal(student, program){
 
   function appendCourses(curriculumType){
     const courses = courseStatus[student][curriculumType];
-    var content = 
-    `<table>` +
-      `<thead>` +
-        `<tr>` +
-          `<th>Course Code</th>` +
-          `<th>Course Title</th>` +
-          `<th>Taken</th>` +
-        `</tr>` +
-      `</thead>` +
-      `<tbody>`;
+    var content = `
+    <table>
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Title</th>
+          <th>Taken</th>
+        </tr>
+      </thead>
+      <tbody>`;
     Object.keys(courses).forEach((course) => {
       if(['notTaken', 'inLoad'].includes(courses[course])){
-        content +=
-        `<tr class="${courses[course]}">` +
-          `<td>` +
-            `<label for="check-${course}">${course}</label>` +
-          `</td>` +
-          `<td>` +
-            `<label for="check-${course}">${programCurriculum[program][curriculumType][course][3]}</label>` +
-          `</td>` +
-          `<td>` +
-            `<input type="checkbox" id="check-${course}" name="${course}">` +
-          `</td>` +
-        `</tr>`;
+        content += `
+        <tr class="${courses[course]}">
+          <td>
+            <label for="check-${course}">${course}</label>
+          </td>
+          <td>
+            <label for="check-${course}">${programCurriculum[program][curriculumType][course][3]}</label>
+          </td>
+          <td>
+            <input type="checkbox" id="check-${course}" name="${course}">
+          </td>
+        </tr>`;
       }
     });
     return content + `</tbody></table>`;
@@ -194,31 +174,24 @@ function openEditModal(student, program){
 function updateCourseStatus(){
   const inputs = {
     core: modal.querySelectorAll('.edit-core input'),
-    elective: modal.querySelectorAll('.edit-elec input')
+    elective: modal.querySelectorAll('.edit-elec input'),
   };
   var hasChecked = false;
 
-  for(const currType in inputs){
-    for(const input of inputs[currType]){
-      if(input.checked){
-        courseStatus[savedName][currType][input.name] = 'taken';
-        hasChecked = true;
-      }
-    }
+  for(const currType in inputs)
+  for(const input of inputs[currType])
+  if(input.checked){
+    courseStatus[savedName][currType][input.name] = 'taken';
+    hasChecked = true;
   }
+
   if(hasChecked){
     generateMutualCourses();
     mainTabs.forEach((tab, i) => {
-      if(tab.dataset.mainnavtab === 'mutual-courses')
-        mainTabs[i].classList.add('selected')
-      else
-        mainTabs[i].classList.remove('selected')
+      mainTabs[i].classList.toggle('selected', tab.dataset.mainnavtab === 'mutual-courses');
     });
     mainWindows.forEach((window) => {
-      if(window.dataset.maintabwindow === 'mutual-courses')
-        window.classList.add('show')
-      else
-        window.classList.remove('show')
+      window.classList.toggle('show', window.dataset.maintabwindow === 'mutual-courses');
     });
   }
   closeModal();
@@ -237,4 +210,4 @@ function closeModal(){
     if(article.classList.contains('show'))
       article.classList.toggle('show')
   })
-}
+} //239

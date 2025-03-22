@@ -21,13 +21,16 @@
 
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  border: 1px solid hsl(0, 0%, 70%);
   box-shadow: -5px 5px hsl(0, 0%, 70%);
 }
-.mutual-courses hr{
-  margin-block: 10px;
+.mutual-courses li .names{
+  padding: 5px;
   border: 1px solid hsl(0, 0%, 70%);
+  border-bottom: none;
+}
+.mutual-courses li .names span{
+  white-space: nowrap;
+  line-height: 1.5;
 }
 .mutual-courses table{
   line-height: 1.5em;
@@ -76,7 +79,6 @@
   .mutual-courses ul{ column-count: 1; }
 }
 @media(max-width: 560px){
-
   .mutual-courses ul{
     grid-template-columns: 1fr;
   }
