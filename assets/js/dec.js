@@ -99,10 +99,22 @@ const programCurriculum = {
   },
 };
 const specialization = {
-  'Computer Network and Security': '',
-  'Cybersecurity': '',
-  'Application Development': '',
-  'Enterprise Data Management': '',
+  'COMPUTER NETWORK AND SECURITY': {
+  },
+  'CYBERSECURITY': {
+  },
+  'APPLICATION DEVELOPMENT TRACK': {
+    'ITS181-1': [2, 4, 'ITS181-1', 'APPLICATION DEVELOPMENT 1', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+    'ITS181-2': [3, 1, 'ITS181-2', 'APPLICATION DEVELOPMENT 2', 4.5, '-', 3, 'ITS181-1', '', ''],
+    'ITS181-3': [3, 2, 'ITS181-3', 'APPLICATION DEVELOPMENT 3', 4.5, '-', 3, 'ITS181-2', '', ''],
+    'ITS181-4': [3, 3, 'ITS181-4', 'APPLICATION DEVELOPMENT 4', 4.5, '-', 3, 'ITS181-3', '', ''],
+  },
+  'ENTERPRISE NETWORK TRACK': {
+    'ITS182-1': [2, 4, 'ITS182-1', 'ENTERPRISE NETWORK 1', 4.5, '-', 3, 'CSS124, CSS124L', '', ''],
+    'ITS182-2': [3, 1, 'ITS182-2', 'ENTERPRISE NETWORK 2', 4.5, '-', 3, 'ITS182-1', '', ''],
+    'ITS182-3': [3, 2, 'ITS182-3', 'ENTERPRISE NETWORK 3', 4.5, '-', 3, 'ITS182-2', '', ''],
+    'ITS182-4': [3, 3, 'ITS182-4', 'ENTERPRISE NETWORK 4', 4.5, '-', 3, 'ITS182-3', '', ''],
+  },
 };
 const courseStatus = {
 	'Jose Victorino': {
@@ -148,7 +160,7 @@ const courseStatus = {
       CSS123: 'taken',
       CSS123L: 'taken',
       CSS131: 'taken',
-      CSS140: 'inLoad',
+      CSS140: 'taken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
   
@@ -158,37 +170,37 @@ const courseStatus = {
       GED109: 'taken',
       ITS122: 'taken',
       ITS122L: 'taken',
-      ITS163L: 'inLoad',
+      ITS163L: 'taken',
   
       GED106: 'taken',
-      ITS132: 'notTaken',
-      ITS132L: 'notTaken',
-      ITS141: 'notTaken',
-      ITS151: 'notTaken',
-      ITS151L: 'notTaken',
-      ITS164L: 'notTaken',
+      ITS132: 'taken',
+      ITS132L: 'taken',
+      ITS141: 'taken',
+      ITS151: 'taken',
+      ITS151L: 'taken',
+      ITS164L: 'inLoad',
       ITS165: 'taken',
   
       GED107: 'taken',
-      ITS142: 'notTaken',
-      ITS142L: 'notTaken',
-      ITS152: 'notTaken',
-      ITS152L: 'notTaken',
+      ITS142: 'inLoad',
+      ITS142L: 'inLoad',
+      ITS152: 'inLoad',
+      ITS152L: 'inLoad',
       RZL110: 'taken',
   
       // 3rd Year
-      ITS105: 'notTaken',
+      ITS105: 'inLoad',
       ITS109: 'notTaken',
       ITS120: 'taken',
       ITS120L: 'taken',
       ITS153: 'notTaken',
       ITS153L: 'notTaken',
-      ITS166: 'notTaken',
-      ITS166L: 'notTaken',
+      ITS166: 'inLoad',
+      ITS166L: 'inLoad',
   
       CSS153: 'notTaken',
       CSS153L: 'notTaken',
-      ISS160: 'inLoad',
+      ISS160: 'taken',
       'ITS200-1': 'notTaken',
       
       ITS198F: 'preReq',
@@ -213,7 +225,13 @@ const courseStatus = {
       ITS172: 'notTaken',
       ITS173: 'notTaken',
       ITS174: 'notTaken',
-      ITS175: 'notTaken',
+      ITS175: 'taken',
+    },
+    specialization: {
+      'ITS181-1': 'notTaken',
+      'ITS181-2': 'notTaken',
+      'ITS181-3': 'notTaken',
+      'ITS181-4': 'notTaken',
     },
 	},
 	'Marion Clanza': {
@@ -232,7 +250,7 @@ const courseStatus = {
       'FW02-1': 'taken',
       GED103: 'taken',
       GED108: 'taken',
-      ISS120: 'inLoad',
+      ISS120: 'taken',
       ITS110L: 'taken',
       NSTP200: 'taken',
   
@@ -271,35 +289,35 @@ const courseStatus = {
       ITS122L: 'inLoad',
       ITS163L: 'taken',
   
-      GED106: 'inLoad',
+      GED106: 'taken',
       ITS132: 'taken',
       ITS132L: 'taken',
-      ITS141: 'notTaken',
-      ITS151: 'notTaken',
-      ITS151L: 'notTaken',
-      ITS164L: 'inLoad',
+      ITS141: 'taken',
+      ITS151: 'taken',
+      ITS151L: 'taken',
+      ITS164L: 'taken',
       ITS165: 'taken',
   
-      GED107: 'inLoad',
-      ITS142: 'notTaken',
-      ITS142L: 'notTaken',
-      ITS152: 'notTaken',
-      ITS152L: 'notTaken',
+      GED107: 'taken',
+      ITS142: 'inLoad',
+      ITS142L: 'inLoad',
+      ITS152: 'inLoad',
+      ITS152L: 'inLoad',
       RZL110: 'taken',
   
       // 3rd Year
-      ITS105: 'notTaken',
+      ITS105: 'inLoad',
       ITS109: 'notTaken',
       ITS120: 'taken',
       ITS120L: 'taken',
       ITS153: 'notTaken',
       ITS153L: 'notTaken',
-      ITS166: 'notTaken',
-      ITS166L: 'notTaken',
+      ITS166: 'inLoad',
+      ITS166L: 'inLoad',
   
       CSS153: 'notTaken',
       CSS153L: 'notTaken',
-      ISS160: 'inLoad',
+      ISS160: 'taken',
       'ITS200-1': 'notTaken',
       
       ITS198F: 'preReq',
@@ -314,7 +332,7 @@ const courseStatus = {
       CSS172: 'notTaken',
       CSS173: 'notTaken',
       ECS176: 'notTaken',
-      ISS170: 'notTaken',
+      ISS170: 'taken',
       ISS171: 'notTaken',
       ISS172: 'notTaken',
       ISS173: 'notTaken',
@@ -324,7 +342,13 @@ const courseStatus = {
       ITS172: 'notTaken',
       ITS173: 'notTaken',
       ITS174: 'notTaken',
-      ITS175: 'notTaken',
+      ITS175: 'taken',
+    },
+    specialization: {
+      'ITS182-1': 'notTaken',
+      'ITS182-2': 'notTaken',
+      'ITS182-3': 'notTaken',
+      'ITS182-4': 'notTaken',
     },
 	},
 	'Nikkos Dantes': {
@@ -370,12 +394,12 @@ const courseStatus = {
       CSS123: 'taken',
       CSS123L: 'taken',
       CSS131: 'taken',
-      CSS140: 'inLoad',
+      CSS140: 'taken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
   
-      CSS124: 'inLoad',
-      CSS124L: 'inLoad',
+      CSS124: 'taken',
+      CSS124L: 'taken',
       CSS145: 'taken',
       GED109: 'taken',
       ITS122: 'taken',
@@ -383,34 +407,34 @@ const courseStatus = {
       ITS163L: 'taken',
   
       GED106: 'taken',
-      ITS132: 'notTaken',
-      ITS132L: 'notTaken',
-      ITS141: 'notTaken',
-      ITS151: 'notTaken',
-      ITS151L: 'notTaken',
-      ITS164L: 'inLoad',
+      ITS132: 'taken',
+      ITS132L: 'taken',
+      ITS141: 'taken',
+      ITS151: 'taken',
+      ITS151L: 'taken',
+      ITS164L: 'taken',
       ITS165: 'taken',
   
       GED107: 'taken',
-      ITS142: 'notTaken',
-      ITS142L: 'notTaken',
-      ITS152: 'notTaken',
-      ITS152L: 'notTaken',
+      ITS142: 'inLoad',
+      ITS142L: 'inLoad',
+      ITS152: 'inLoad',
+      ITS152L: 'inLoad',
       RZL110: 'taken',
   
       // 3rd Year
-      ITS105: 'notTaken',
+      ITS105: 'inLoad',
       ITS109: 'notTaken',
-      ITS120: 'inLoad',
-      ITS120L: 'inLoad',
+      ITS120: 'taken',
+      ITS120L: 'taken',
       ITS153: 'notTaken',
       ITS153L: 'notTaken',
-      ITS166: 'notTaken',
-      ITS166L: 'notTaken',
+      ITS166: 'inLoad',
+      ITS166L: 'inLoad',
   
       CSS153: 'notTaken',
       CSS153L: 'notTaken',
-      ISS160: 'notTaken',
+      ISS160: 'taken',
       'ITS200-1': 'notTaken',
       
       ITS198F: 'preReq',
@@ -425,7 +449,7 @@ const courseStatus = {
       CSS172: 'notTaken',
       CSS173: 'notTaken',
       ECS176: 'notTaken',
-      ISS170: 'notTaken',
+      ISS170: 'inLoad',
       ISS171: 'notTaken',
       ISS172: 'notTaken',
       ISS173: 'notTaken',
@@ -435,7 +459,13 @@ const courseStatus = {
       ITS172: 'notTaken',
       ITS173: 'notTaken',
       ITS174: 'notTaken',
-      ITS175: 'notTaken',
+      ITS175: 'taken',
+    },
+    specialization: {
+      'ITS182-1': 'notTaken',
+      'ITS182-2': 'notTaken',
+      'ITS182-3': 'notTaken',
+      'ITS182-4': 'notTaken',
     },
 	},
 	'Jhuris Valencia': {
@@ -481,47 +511,47 @@ const courseStatus = {
       CSS123: 'taken',
       CSS123L: 'taken',
       CSS131: 'taken',
-      CSS140: 'inLoad',
+      CSS140: 'taken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
   
       CSS124: 'taken',
       CSS124L: 'taken',
-      CSS145: 'inLoad',
+      CSS145: 'taken',
       GED109: 'taken',
       ITS122: 'taken',
       ITS122L: 'taken',
       ITS163L: 'taken',
   
       GED106: 'taken',
-      ITS132: 'notTaken',
-      ITS132L: 'notTaken',
-      ITS141: 'notTaken',
-      ITS151: 'notTaken',
-      ITS151L: 'notTaken',
+      ITS132: 'taken',
+      ITS132L: 'taken',
+      ITS141: 'taken',
+      ITS151: 'taken',
+      ITS151L: 'taken',
       ITS164L: 'taken',
-      ITS165: 'notTaken',
+      ITS165: 'taken',
   
       GED107: 'taken',
-      ITS142: 'notTaken',
-      ITS142L: 'notTaken',
-      ITS152: 'notTaken',
-      ITS152L: 'notTaken',
+      ITS142: 'inLoad',
+      ITS142L: 'inLoad',
+      ITS152: 'inLoad',
+      ITS152L: 'inLoad',
       RZL110: 'taken',
   
       // 3rd Year
-      ITS105: 'notTaken',
+      ITS105: 'inLoad',
       ITS109: 'notTaken',
       ITS120: 'taken',
       ITS120L: 'taken',
       ITS153: 'notTaken',
       ITS153L: 'notTaken',
-      ITS166: 'notTaken',
-      ITS166L: 'notTaken',
+      ITS166: 'inLoad',
+      ITS166L: 'inLoad',
   
       CSS153: 'notTaken',
       CSS153L: 'notTaken',
-      ISS160: 'inLoad',
+      ISS160: 'taken',
       'ITS200-1': 'notTaken',
       
       ITS198F: 'preReq',
@@ -546,7 +576,13 @@ const courseStatus = {
       ITS172: 'notTaken',
       ITS173: 'notTaken',
       ITS174: 'notTaken',
-      ITS175: 'notTaken',
+      ITS175: 'taken',
+    },
+    specialization: {
+      'ITS181-1': 'notTaken',
+      'ITS181-2': 'notTaken',
+      'ITS181-3': 'notTaken',
+      'ITS181-4': 'notTaken',
     },
 	},
 	'Vhinz Cubar': {
@@ -592,7 +628,7 @@ const courseStatus = {
       CSS123: 'taken',
       CSS123L: 'taken',
       CSS131: 'taken',
-      CSS140: 'inLoad',
+      CSS140: 'taken',
       ITS162L: 'taken',
       'MATH154-1': 'taken',
   
@@ -600,24 +636,24 @@ const courseStatus = {
       CSS124L: 'taken',
       CSS145: 'taken',
       GED109: 'taken',
-      ITS122: 'inLoad',
-      ITS122L: 'inLoad',
+      ITS122: 'notTaken',
+      ITS122L: 'notTaken',
       ITS163L: 'taken',
   
       GED106: 'taken',
       ITS132: 'taken',
       ITS132L: 'taken',
-      ITS141: 'notTaken',
+      ITS141: 'taken',
       ITS151: 'taken',
       ITS151L: 'taken',
-      ITS164L: 'inLoad',
+      ITS164L: 'taken',
       ITS165: 'taken',
   
       GED107: 'taken',
       ITS142: 'notTaken',
       ITS142L: 'notTaken',
-      ITS152: 'notTaken',
-      ITS152L: 'notTaken',
+      ITS152: 'taken',
+      ITS152L: 'taken',
       RZL110: 'taken',
   
       // 3rd Year
@@ -647,7 +683,7 @@ const courseStatus = {
       CSS172: 'notTaken',
       CSS173: 'notTaken',
       ECS176: 'notTaken',
-      ISS170: 'inLoad',
+      ISS170: 'taken',
       ISS171: 'notTaken',
       ISS172: 'notTaken',
       ISS173: 'notTaken',
@@ -658,6 +694,12 @@ const courseStatus = {
       ITS173: 'notTaken',
       ITS174: 'notTaken',
       ITS175: 'notTaken',
+    },
+    specialization: {
+      'ITS181-1': 'notTaken',
+      'ITS181-2': 'notTaken',
+      'ITS181-3': 'notTaken',
+      'ITS181-4': 'notTaken',
     },
 	},
 	// 'Mark Artista': {
@@ -776,46 +818,46 @@ const studentInfo = {
   'Jose Victorino': {
     displayName: "Jose's",
     program: 'IT',
-    defaultYear: 2,
+    defaultYear: 3,
     curriculumYear: 2022,
-    specialization: 'Unassigned',
-    unitsRequired: 171,
+    specialization: 'APPLICATION DEVELOPMENT TRACK',
+    unitsRequired: 170,
     defaultUnitsPassed: 13,
   },
   'Marion Clanza': {
     displayName: "Marion's",
     program: 'IT',
-    defaultYear: 2,
+    defaultYear: 3,
     curriculumYear: 2022,
-    specialization: 'Unassigned',
-    unitsRequired: 171,
+    specialization: 'ENTERPRISE NETWORK TRACK',
+    unitsRequired: 170,
     defaultUnitsPassed: 13,
   },
   'Nikkos Dantes': {
     displayName: "Nikkos'",
     program: 'IT',
-    defaultYear: 2,
+    defaultYear: 3,
     curriculumYear: 2022,
-    specialization: 'Unassigned',
-    unitsRequired: 171,
+    specialization: 'ENTERPRISE NETWORK TRACK',
+    unitsRequired: 170,
     defaultUnitsPassed: 16,
   },
   'Jhuris Valencia': {
     displayName: "Jhuris'",
     program: 'IT',
-    defaultYear: 2,
+    defaultYear: 3,
     curriculumYear: 2022,
-    specialization: 'Unassigned',
-    unitsRequired: 171,
+    specialization: 'APPLICATION DEVELOPMENT TRACK',
+    unitsRequired: 170,
     defaultUnitsPassed: 16,
   },
   'Vhinz Cubar': {
     displayName: "Vhinz's",
     program: 'IT',
-    defaultYear: 2,
+    defaultYear: 3,
     curriculumYear: 2022,
-    specialization: 'Unassigned',
-    unitsRequired: 171,
+    specialization: 'APPLICATION DEVELOPMENT TRACK',
+    unitsRequired: 170,
     defaultUnitsPassed: 16,
   },
   // 'Mark Artista': {
@@ -823,8 +865,8 @@ const studentInfo = {
   //   program: 'IT',
   //   defaultYear: 3,
   //   curriculumYear: 2022,
-  //   specialization: 'Unassigned',
-  //   unitsRequired: 171,
+  //   specialization: 'CYBERSECURITY',
+  //   unitsRequired: 170,
   //   defaultUnitsPassed: 32,
   // },
 }
@@ -990,8 +1032,73 @@ function generateElectivesCurriculum(elec){
 
   return content;
 }
+function generateSpecialization(spec) {
+  if(spec == null) return '<p>No Specialization</p>';
+  
+  var content = ''
+  let totalLecHrs = 0;
+  let totalLabHrs = 0;
+  let totalUnits = 0;
 
-Object.entries(studentInfo).forEach(([student, {displayName, program, defaultYear, curriculumYear, specialization, unitsRequired, defaultUnitsPassed}], i) => {
+  content += 
+    `<p>Year 3 Term 3</p>
+    <div class="table-cont">
+    <table>
+      <thead>
+        <tr>
+          <th>Course Code</th>
+          <th>Course Title</th>
+          <th>Lec Hrs</th>
+          <th>Lab Hrs</th>
+          <th>Credit Units</th>
+          <th>Pre-Requisites</th>
+          <th>Co-Requisites</th>
+          <th>Paired Courses</th>
+        </tr>
+      </thead>
+      <tbody>`;
+
+  for(const course in spec){
+    const courseInfo = spec[course];
+
+    if(!(courseInfo[4] === '-'))
+      totalLecHrs += (Number(courseInfo[4])) ? courseInfo[4] : 0;
+    if(!(courseInfo[5] === '-'))
+      totalLabHrs += (Number(courseInfo[5])) ? courseInfo[5] : 0;
+    if(!(courseInfo[6] === '-'))
+      totalUnits += (Number(courseInfo[6])) ? courseInfo[6] : 0;
+
+    content +=
+      `<tr>
+        <td>${courseInfo[2]}</td>
+        <td>${courseInfo[3]}</td>
+        <td>${courseInfo[4]}</td>
+        <td>${courseInfo[5]}</td>
+        <td>${courseInfo[6]}</td>
+        <td>${courseInfo[7]}</td>
+        <td>${courseInfo[8]}</td>
+        <td>${courseInfo[9]}</td>
+      </tr>`;
+  }
+  
+  content +=
+    `<tr>
+      <td></td>
+      <td style="text-align: center">total</td>
+      <td>${totalLecHrs}</td>
+      <td>${totalLabHrs}</td>
+      <td>${totalUnits}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </tbody></table></div>`;
+
+  return content;
+}
+
+Object.entries(studentInfo).forEach(([student, obj], i) => {
+  const {displayName, program, defaultYear, curriculumYear, specialization: spec, unitsRequired, defaultUnitsPassed} = obj;
   const {core, elective} = programCurriculum[program];
   
   if(defaultYear !== 3)
@@ -1020,7 +1127,7 @@ Object.entries(studentInfo).forEach(([student, {displayName, program, defaultYea
             <p>Curriculum Year: <b>${curriculumYear}</b></p>
           </li>
           <li>
-            <p>Specialization: <b>${specialization}</b></p>
+            <p>Specialization: <b>${spec}</b></p>
           </li>
         </ul>
         <ul class="units">
@@ -1099,9 +1206,61 @@ Object.entries(studentInfo).forEach(([student, {displayName, program, defaultYea
           ${generateElectivesCurriculum(elective)}
         </article>
         <article id="Specialization">
-          <p>Walang special sayo.</p>
+          <span>
+            <span>
+              <span>Required Units: </span><b>12</b>
+            </span>
+            <span>
+              <span>Units Passed: </span><b data-specUnitsPassed></b>
+            </span>
+            <span>
+              <span>Units Left: </span><b data-specUnitsLeft></b>
+            </span>
+          </span>
+          ${generateSpecialization(specialization[spec])}
         </article>
       </div>
     </div>
   </section>`;
 }); // 1113
+
+// function getIntVal(val){
+//   var newval = null;
+
+//   if(typeof val === 'number')
+//     newval = val;
+//   return newval;
+// }
+
+// var itCurrTableSQL = `INSERT INTO it_course ("curriculumType", "Year", "Term", "Course Code", "Course Title", "Lec Hrs", "Lab Hrs", "Credit Units", "Pre-Requisites", "Co-Requisites", "Paired Courses")\nVALUES\n`;
+// Object.keys(programCurriculum.IT).forEach((currType, i) => {
+//   if(typeof programCurriculum.IT[currType] === 'object'){
+//     Object.keys(programCurriculum.IT[currType]).forEach((course, j) => {
+//       const info = programCurriculum.IT[currType][course];
+
+//       itCurrTableSQL += `('${currType}', ${info[0]}, ${info[1]}, '${info[2]}', '${info[3]}', ${getIntVal(info[4])}, ${getIntVal(info[5])}, ${getIntVal(info[6])}, '${info[7]}', '${info[8]}', '${info[9]}')`;
+//       itCurrTableSQL += (i === 1   && Object.keys(programCurriculum.IT[currType]).length === (j + 1)) ? ';' : ',\n';
+//     });
+//   }
+// });
+// console.log(itCurrTableSQL);
+
+// var coreStatusTableSQL = `INSERT INTO course_status ("name", "curriculumType", "Course Code", "status")\nVALUES\n`;
+// console.log(courseStatus);
+// Object.entries(courseStatus).forEach(([name, curriculumTypes], i) => {
+//   if(name !== 'Jose Victorino') return;
+
+//   Object.entries(curriculumTypes).forEach(([curriculumType, courses]) => {
+//     Object.entries(courses).forEach(([course, status]) => {
+//       coreStatusTableSQL += `(${i + 1}, "${curriculumType}", "${course}", "${status}"),\n`;
+//     });
+//   });
+// });
+// console.log(coreStatusTableSQL);
+
+// var studentInfoTableSQL = "INSERT INTO `students` (`name`, `displayName`, `program`, `defaultYear`, `curriculumYear`, `specialization`, `unitsRequired`, `defaultUnitsPassed`)\nVALUES\n";
+// Object.keys(studentInfo).forEach((name, i) => {
+//   studentInfoTableSQL += `("${name}", "${studentInfo[name].displayName}", "${studentInfo[name].program}", ${studentInfo[name].defaultYear}, ${studentInfo[name].curriculumYear}, "${studentInfo[name].specialization}", ${studentInfo[name].unitsRequired}, ${studentInfo[name].defaultUnitsPassed})`;
+//   studentInfoTableSQL += (Object.keys(studentInfo).length === (i + 1)) ? ';' : ',\n';
+// });
+// console.log(studentInfoTableSQL);

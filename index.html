@@ -21,16 +21,20 @@
       <div class="top">
         <ul>
           <li>
-            <a onclick="toggleEditTab()">Core Courses</a>
+            <a onclick="toggleEditTab(0)">Core Courses</a>
           </li>
           <li>
-            <a onclick="toggleEditTab()">Electives</a>
+            <a onclick="toggleEditTab(1)">Electives</a>
+          </li>
+          <li>
+            <a onclick="toggleEditTab(2)">Specialization</a>
           </li>
         </ul>
         <button onclick="updateCourseStatus()">Confirm</button>
       </div>
       <div class="edit-core"></div>
       <div class="edit-elec"></div>
+      <div class="edit-spec"></div>
     </article>
   </div>
   <div class="scroll-container">

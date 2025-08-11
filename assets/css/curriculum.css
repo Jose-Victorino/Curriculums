@@ -118,6 +118,7 @@
   min-height: 400px;
 }
 .student-currs .curr .main-curr .curriculum-lists article.show{ display: flex; }
+.student-currs .curr .main-curr .curriculum-lists article p{ margin-bottom: 4px; } 
 .student-currs .curr .main-curr .curriculum-lists .year-taken{
   display: flex;
   gap: 8px;
@@ -136,7 +137,6 @@
 .curriculum-lists table{ width: 740px; }
 .curriculum-lists .table-cont{ overflow: auto; }
 .curriculum-lists .curr-tables > div .table-cont:not(:last-child){ margin-bottom: 10px; }
-.curriculum-lists .curr-tables > div > p{ margin-bottom: 4px; } 
 .curriculum-lists table thead th:nth-child(1){ white-space: nowrap; }
 .curriculum-lists table thead th:nth-child(2){ width: 40%; }
 .curriculum-lists table thead th:nth-child(3)
@@ -171,18 +171,16 @@
 }
 .edit-status-modal td{ padding: 0}
 .student-currs .curr .main-curr .curriculum-lists #Electives select{ margin: 18px 0 0 20px; }
-.student-currs .curr .main-curr .curriculum-lists #Electives > span{
+.student-currs .curr .main-curr .curriculum-lists :is(#Electives, #Specialization) > span{
   display: flex;
   gap: 10px;
   margin: 0 0 5px;
 }
-.student-currs .curr .main-curr .curriculum-lists #Electives > p{ margin-bottom: 4px; }
-.student-currs .curr .main-curr .curriculum-lists .no-course,
-.student-currs .curr .main-curr .curriculum-lists #Specialization{
+.student-currs .curr .main-curr .curriculum-lists .no-course{
   color: red;
   text-align: center;
 }
-.student-currs .curr .main-curr .curriculum-lists #Specialization p{ margin-top: 16px; }
+
 .edit-status-modal ul,
 .edit-status-modal div.show{
   display: flex;
@@ -209,7 +207,7 @@
   display: flex;
   justify-content: space-between;
 }
-.edit-status-modal :where(.edit-core, .edit-elec){
+.edit-status-modal :where(.edit-core, .edit-elec, .edit-spec){
   background: hsl(222, 8%, 88%) 20%;
   display: none;
   padding: 15px;

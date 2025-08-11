@@ -7,23 +7,29 @@ function generateMutualCourses(){
     const currs = tab.querySelector(`.curriculum-lists`);
     const coreTr = currs.querySelectorAll('#Core-Courses table tbody tr');
     const elecTr = currs.querySelectorAll('#Electives table tbody tr');
+    const specTr = currs.querySelectorAll('#Specialization table tbody tr');
     const stdInfo = studentInfo[student];
     var coreTakenSum = 0;
     var elecTakenSum = 0;
+    var specTakenSum = 0;
     
     coreTr.forEach((courseInfo) => updateStatus(courseInfo, 'core'));
     elecTr.forEach((courseInfo) => updateStatus(courseInfo, 'elective'));
+    specTr.forEach((courseInfo) => updateStatus(courseInfo, 'specialization'));
     
-    tab.querySelector('[data-unitsPassed]').innerText = stdInfo.defaultUnitsPassed + coreTakenSum;
-    tab.querySelector('[data-unitsCredited]').innerText = coreTakenSum;
-    tab.querySelector('[data-unitsLeft]').innerText = stdInfo.unitsRequired - coreTakenSum;
+    const totalTaken = coreTakenSum + elecTakenSum + specTakenSum;
+    tab.querySelector('[data-unitsPassed]').innerText = stdInfo.defaultUnitsPassed + totalTaken;
+    tab.querySelector('[data-unitsCredited]').innerText = totalTaken;
+    tab.querySelector('[data-unitsLeft]').innerText = stdInfo.unitsRequired - totalTaken;
     tab.querySelector('[data-elecUnitsPassed]').innerText = elecTakenSum;
     tab.querySelector('[data-elecUnitsLeft]').innerText = (elecTakenSum > 6) ? 0 : 6 - elecTakenSum;
+    tab.querySelector('[data-specUnitsPassed]').innerText = specTakenSum;
+    tab.querySelector('[data-specUnitsLeft]').innerText = (specTakenSum > 12) ? 0 : 12 - specTakenSum;
 
     function updateStatus(courseInfo, curriculumType){
       const courses = courseStatus[student][curriculumType];
       const courseCode = courseInfo.children[0].innerText;
-      const coreStatus = courseStatus[student].core;
+      const coreStatus = {...courseStatus[student].core, ...courseStatus[student].elective, ...courseStatus[student].specialization};
       const units = courseInfo.children[4].innerText;
       const preReqs = courseInfo.children[5].innerText.split(', ');
       var notTaken = false;
@@ -48,10 +54,13 @@ function generateMutualCourses(){
           courseInfo.classList.remove('inLoad');
         if(courseInfo.classList.contains('notTaken'))
           courseInfo.classList.remove('notTaken');
+
         if(curriculumType === 'core')
           coreTakenSum += (Number(units)) ? Number(units) : 0;
         if(curriculumType === 'elective')
           elecTakenSum += (Number(units)) ? Number(units) : 0;
+        if(curriculumType === 'specialization')
+          specTakenSum += (Number(units)) ? Number(units) : 0;
       }
       courseInfo.classList.add(courses[courseCode]);
     }
@@ -121,6 +130,7 @@ const modal = document.querySelector('.modals');
 const editNavBtn = modal.querySelector('ul').children;
 var editCore = modal.querySelector('.edit-core');
 var editElec = modal.querySelector('.edit-elec');
+var editSpec = modal.querySelector('.edit-spec');
 var savedName = '';
 
 modal.addEventListener('click', e => {
@@ -132,11 +142,14 @@ function openEditModal(student, program){
 
   editCore.innerHTML = appendCourses('core');
   editElec.innerHTML = appendCourses('elective');
+  editSpec.innerHTML = appendCourses('specialization');
 
   editNavBtn[0].classList.add('selected');
   editNavBtn[1].classList.remove('selected');
+  editNavBtn[2].classList.remove('selected');
   editCore.classList.add('show');
   editElec.classList.remove('show');
+  editSpec.classList.remove('show');
   modal.classList.toggle('show');
   modal.querySelector('.edit-status-modal').classList.toggle('show');
 
@@ -154,18 +167,21 @@ function openEditModal(student, program){
       <tbody>`;
     Object.keys(courses).forEach((course) => {
       if(['notTaken', 'inLoad'].includes(courses[course])){
+        const {specialization: spec} = studentInfo[student];
+        const courseCode = curriculumType === 'specialization' ? specialization[spec][course][3] : programCurriculum[program][curriculumType][course][3];
+        
         content += `
-        <tr class="${courses[course]}">
-          <td>
-            <label for="check-${course}">${course}</label>
-          </td>
-          <td>
-            <label for="check-${course}">${programCurriculum[program][curriculumType][course][3]}</label>
-          </td>
-          <td>
-            <input type="checkbox" id="check-${course}" name="${course}">
-          </td>
-        </tr>`;
+          <tr class="${courses[course]}">
+            <td>
+              <label for="check-${course}">${course}</label>
+            </td>
+            <td>
+              <label for="check-${course}">${courseCode}</label>
+            </td>
+            <td>
+              <input type="checkbox" id="check-${course}" name="${course}">
+            </td>
+          </tr>`;
       }
     });
     return content + `</tbody></table>`;
@@ -175,6 +191,7 @@ function updateCourseStatus(){
   const inputs = {
     core: modal.querySelectorAll('.edit-core input'),
     elective: modal.querySelectorAll('.edit-elec input'),
+    specialization: modal.querySelectorAll('.edit-spec input'),
   };
   var hasChecked = false;
 
@@ -196,11 +213,24 @@ function updateCourseStatus(){
   }
   closeModal();
 }
-function toggleEditTab(){
-  editNavBtn[0].classList.toggle('selected');
-  editNavBtn[1].classList.toggle('selected');
-  editCore.classList.toggle('show');
-  editElec.classList.toggle('show');
+function toggleEditTab(i){
+  editNavBtn[0].classList.remove('selected');
+  editNavBtn[1].classList.remove('selected');
+  editNavBtn[2].classList.remove('selected');
+  editCore.classList.remove('show');
+  editElec.classList.remove('show');
+  editSpec.classList.remove('show');
+  
+  editNavBtn[i].classList.add('selected');
+  if(i === 0){
+    editCore.classList.add('show');
+  }
+  if(i === 1){
+    editElec.classList.add('show');
+  }
+  if(i === 2){
+    editSpec.classList.add('show');
+  }
 }
 function closeModal(){
   const articles = modal.querySelectorAll('article');
