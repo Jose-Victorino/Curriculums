@@ -1,0 +1,66 @@
+.taken{
+  color: var(--taken);
+}
+.inLoad{
+  color: var(--inLoad);
+}
+.notTaken{
+  color: var(--notTaken);
+}
+.incomplete{
+  color: var(--incomplete);
+}
+.credited{
+  color: var(--credited);
+}
+.preReq{
+  color: var(--preReq);
+}
+
+.tableCont{ overflow: auto; }
+.tableCont:not(:last-child){ margin-bottom: 10px; }
+
+.termTable{
+  th{
+    background: hsl(0, 0%, 55%);
+    font-weight: normal;
+    text-align: center;
+    border: solid 1px hsl(0, 0%, 20%);
+  }
+  td{
+    background: #f0f0f0;
+    border: solid 1px hsl(0, 0%, 85%);
+  }
+  
+  thead tr{
+    th:nth-child(1){
+      white-space: nowrap;
+    }
+    th:nth-child(2){
+      width: 40%;
+    }
+    th:nth-child(3),
+    th:nth-child(4),
+    th:nth-child(5){
+      width: 5%;
+    }
+    th:nth-child(6),
+    th:nth-child(7){
+      width: 15%;
+    }
+  }
+  
+  tbody tr{
+    &:last-child{
+      border-top: 2px solid black;
+    }
+
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(5){
+      text-align: center;
+    }
+
+  }
+
+}

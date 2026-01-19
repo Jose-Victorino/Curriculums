@@ -1,0 +1,98 @@
+@use '/src/library/base' as base;
+@use "sass:color";
+
+@mixin btn-base(){
+  padding: base.$btn-r-md;
+  border-radius: 5px;
+
+  &:disabled {
+    background-color: color.adjust(base.$primary-color, $lightness: -20%);
+    color: base.$gs-b-50;
+    cursor: not-allowed;
+  }
+}
+
+// solid
+.btn-primary{
+  background-color: base.$primary-color;
+  gap: 4px;
+
+  svg{
+    color: base.$gs-w-90;
+    height: base.$sz-16-20;
+    width: base.$sz-16-20;
+  }
+  p{
+    color: base.$gs-w-90;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: color.adjust(base.$primary-color, $lightness: -8%);
+  }
+
+  @include btn-base();
+}
+// outline
+.btn-secondary{
+  gap: 4px;
+  border: 1px solid base.$primary-color;
+
+  svg{
+    color: base.$gs-b-90;
+    height: base.$sz-16-20;
+    width: base.$sz-16-20;
+  }
+  p{
+    color: base.$gs-b-90;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: color.adjust(base.$primary-color, $lightness: -8%);
+    border: 1px solid color.adjust(base.$primary-color, $lightness: -8%);
+
+    svg, p{
+      color: base.$gs-w-90;
+    }
+  }
+  &:disabled{
+    border: 1px solid color.adjust(base.$primary-color, $lightness: -20%);
+  }
+
+  @include btn-base();
+}
+// link
+.btn-tertiary{
+  color: base.$primary-color;
+  gap: 4px;
+  
+  svg{
+    color: base.$primary-color;
+    height: base.$sz-16-20;
+    width: base.$sz-16-20;
+  }
+  p{
+    color: base.$primary-color;
+  }
+
+  &:hover:not(:disabled) {
+    text-decoration: underline;
+  }
+
+  @include btn-base();
+}
+.btn-nav{
+  gap: 8px;
+
+  p{
+    color: base.$gs-b-90;
+  }
+  svg{
+    height: base.$sz-16-20;
+    width: base.$sz-16-20;
+  }
+  &:hover{
+    background-color: base.$gs-w-70;
+  }
+
+  @include btn-base();
+}

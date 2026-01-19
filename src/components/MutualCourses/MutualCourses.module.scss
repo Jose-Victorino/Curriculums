@@ -1,0 +1,92 @@
+.mutualCourses {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    column-count: 3;
+    gap: 20px;
+  }
+  li {
+    page-break-inside: avoid;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 5px hsl(0, 0%, 70%);
+
+    .names {
+      padding: 5px;
+      border: 1px solid hsl(0, 0%, 70%);
+    }
+  }
+
+  table {
+    line-height: 1.5em;
+    width: 100%;
+
+    th, td {
+      border: solid 1px hsl(0, 0%, 30%);
+    }
+    thead th {
+      background: hsl(0, 0%, 55%);
+      font-weight: normal;
+      text-align: center;
+      border: solid 1px hsl(0, 0%, 20%);
+    }
+    thead th:first-child {
+      width: 25%;
+    }
+    thead th:last-child {
+      width: 75%;
+    }
+
+    tbody tr:nth-child(odd) td {
+      background: hsl(0, 0%, 0%, 0.3);
+    }
+    tbody tr:nth-child(even) td {
+      background: rgba(0, 0, 0, 0.15);
+    }
+    
+    tbody tr.core + tr.elective,
+    tbody tr.elective + tr.specialization{
+      border-top: solid 2px black;
+    }
+  }
+
+  
+  @media(max-width: 940px){
+    ul{ column-count: 2; }
+  }
+  @media(max-width: 740px){
+    ul{ column-count: 1; }
+  }
+  @media(max-width: 560px){
+    ul{
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.taken{
+  color: var(--taken);
+}
+.inLoad{
+  color: var(--inLoad);
+}
+.notTaken{
+  color: var(--notTaken);
+}
+.incomplete{
+  color: var(--incomplete);
+}
+.credited{
+  color: var(--credited);
+}
+.preReq{
+  color: var(--preReq);
+}

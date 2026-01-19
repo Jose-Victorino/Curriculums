@@ -1,0 +1,15 @@
+.curr{
+  gap: 15px;
+}
+
+.yearList{
+  display: flex;
+  gap: 10px;
+}
+.yearList button{
+  color: #000;
+  line-height: 100%;
+}
+.yearList button.selected{
+  color: var(--l-blue);
+}

@@ -1,0 +1,49 @@
+.main{
+  display: flex;
+  height: 100%;
+}
+
+.header{
+  background: hsl(222, 12%, 30%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  padding-inline: 25px;
+}
+.header .Burger_Cont{
+  display: none;
+}
+.header img{
+  height: 40px;
+  user-select: none;
+}
+
+@media(max-width: 560px){
+  .header .Burger_Cont{
+    display: flex;
+  }
+  .header .Burger_Cont .Nav_Burger{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 18px;
+    aspect-ratio: 7 / 8;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .header .Burger_Cont .Nav_Burger .Bar{
+    background: #e3e3e3;
+    height: 12%;
+    border-radius: 100px;
+    transition: 0.3s;
+  }
+  .header .Nav_Burger.on{ transform: rotateZ(180deg); }
+  .header .Nav_Burger.on .Bar_Top{ transform: rotateZ(45deg) translate(26%, 200%); }
+  .header .Nav_Burger.on .Bar_Bot{ transform: rotateZ(-45deg) translate(26%, -200%); }
+  .header .Nav_Burger.on .Bar_Mid{ opacity: 0; }
+  .header img{
+    height: 30px;
+  }
+}

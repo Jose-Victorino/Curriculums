@@ -1,0 +1,140 @@
+.mainWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+  height: calc(100vh - 70px);
+  width: 100%;
+  overflow: hidden auto;
+}
+
+.studentInformation{
+  background: var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+}
+.studentName{
+  font-size: var(--fs-20-24);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.studentName button{
+  display: flex;
+}
+.studentName img{
+  width: clamp(14px, -0.875rem + 5vw, 16px);
+}
+.infos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.infos ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 5px;
+  padding: 8px 5px 5px;
+  border: 2px groove gray;
+}
+.infos .basicInfo::before {
+  content: 'Basic Information';
+}
+.infos .units::before {
+  content: 'Units';
+}
+.infos ul::before {
+  background: var(--gray);
+  position: absolute;
+  top: 0;
+  font-size: 11px;
+  padding: 0 3px;
+  transform: translateY(-55%);
+}
+
+.currSection{
+  max-width: 860px;
+  width: calc(100vw - 200px);
+  margin-inline: auto;
+}
+.currSection .tabNav{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  gap: 10px;
+}
+.currSection ul{
+  display: flex;
+}
+.currSection .tabBtnList button{
+  background: var(--gray);
+  line-height: 100%;
+  padding: 5px 8px;
+  border-radius: 7px 7px 0 0;
+}
+.currSection .tabBtnList button.selected,
+.currSection .tabBtnList button.selected:hover{
+  background: hsl(222, 8%, 88%);
+}
+.currSection .tabBtnList button:hover{
+  background: hsl(222, 8%, 77%);
+}
+.currSection .legend div{
+  width: 12px;
+  height: 12px;
+  border: 1px solid black;
+}
+.currSection .legend{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 0 5px;
+}
+.currSection .legend b{
+  font-size: 12px;
+}
+.currSection .legend ul{
+  display: flex;
+  gap: 10px;
+}
+.currSection .legend li{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 2px; 
+}
+
+.currDisplay{
+  background: linear-gradient(to bottom, hsl(222, 8%, 88%) 20%, hsl(222, 8%, 93%));
+}
+.currDisplay article{
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+.taken{
+  background: var(--taken);
+}
+.inLoad{
+  background: var(--inLoad);
+}
+.notTaken{
+  background: var(--notTaken);
+}
+.incomplete{
+  background: var(--incomplete);
+}
+.credited{
+  background: var(--credited);
+}
+.preReq{
+  background: var(--preReq);
+}
