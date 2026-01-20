@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { GlobalProvider } from '/src/context/globalContext';
+import { GlobalProvider } from '/src/context/GlobalContext';
 
 import App from './App.jsx'
 import MutualCourses from '/src/components/MutualCourses/MutualCourses.jsx'
