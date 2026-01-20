@@ -11,6 +11,6 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: process.env.PORT || 3000,
-    allowedHosts: ['curriculums.onrender.com']
+    allowedHosts: ['curriculums-yevg.onrender.com']
   }
 })
