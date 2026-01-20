@@ -8,7 +8,7 @@
     "start": "npm run dev",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --host"
   },
   "dependencies": {
     "classnames": "^2.5.1",
