@@ -11,7 +11,7 @@ import '/src/library/vars.scss'
 import '/src/library/reset.scss'
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/Curriculums">
+  <BrowserRouter>
     <GlobalProvider>
       <Routes>
         <Route path="/" element={<App />}>
